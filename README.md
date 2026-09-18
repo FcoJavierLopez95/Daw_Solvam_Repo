@@ -1,1 +1,1 @@
-![Solvam]("/Images/Solvam.png")
+![Solvam]("/Images/Solvam.jpg")
