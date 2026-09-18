@@ -1,7 +1,9 @@
-<p align="left">
-  <img src="./Images/Solvam.png" alt="Texto Solvam" height="150" valign="middle">
-  <span style="font-size: 2em; font-weight: bold; margin-left: 10px;">DAM Solvam</span>
-</p>
+<img src="./Images/Solvam.png" alt="Texto Solvam" height="150" align="left" style="margin-right: 15px;">
+
+# DAM Solvam
+
+<br clear="left"/>
+
 
 <!-- <img src="./Images/Solvam.png" alt="Texto Solvam" height="150"> 
 
