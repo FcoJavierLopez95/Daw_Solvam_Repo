@@ -1,1 +1,1 @@
-![Solvam](ruta-o-url)
+![Solvam]("/Images/Solvam.png")
