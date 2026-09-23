@@ -4,16 +4,29 @@
 # realizar un algoritmo que intercambie los valores de ambas variables y muestre
 # cuánto valen al final las dos variables.
 # ------------------------------------------------------------------------------
+A = input("Dime el valor de A:")
+B = input("Dime el valor de B:")
 
+i = A
+A = B
+B = i
 
-
+print( f"Ahora B es: {B} y A vale {A}")
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 6
 # Algoritmo que lea dos números, calculando y escribiendo el valor de su suma,
 # resta, producto y división.
 # ------------------------------------------------------------------------------
+num_a =int(input("Dime el valor de A:"))
+num_b = int(input("Dime el valor de B:"))
 
+sum = num_a + num_b
+rest = num_a - num_b
+prod = num_a * num_b
+div = num_a / num_b 
+
+print(f" Dados los valores de {num_a} y {num_b} obtenemos los siguientes resultados: \n suma: {sum} \n resta: {rest}: \n producto: {prod}: \n división: {div}:")
 
 
 
