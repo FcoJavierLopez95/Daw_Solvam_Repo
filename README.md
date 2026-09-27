@@ -17,8 +17,8 @@
 ## Ejercicios de clase de Primero de DAM Solvam
 
 * [1 - Programación](./Asignaturas/Programacion)
-    |=>[1.1 - Ejercicios Lógicos con python](./Asignaturas/Programacion/tema_1_introduccion_a_python_parte_1.py)
+    - [1.1 - Ejercicios Lógicos con python](./Asignaturas/Programacion/tema_1_introduccion_a_python_parte_1.py)
 * [2 - Lenguaje de marcas](./Asignaturas/Lenguaje_de_marcas)
-    |=>[2.1 - Etiquetas HTML](./Asignaturas/Lenguaje_de_marcas/001_Etiquetas_17_09_2026.html)
-    |=>[2.2 - Listas, enlaces e imágenes HTML](./Asignaturas/Lenguaje_de_marcas/002_Listas_enlaces_y_imagenes_22_09_20206.html)
+    - [2.1 - Etiquetas HTML](./Asignaturas/Lenguaje_de_marcas/001_Etiquetas_17_09_2026.html)
+    - [2.2 - Listas, enlaces e imágenes HTML](./Asignaturas/Lenguaje_de_marcas/002_Listas_enlaces_y_imagenes_22_09_20206.html)
 ![]()
