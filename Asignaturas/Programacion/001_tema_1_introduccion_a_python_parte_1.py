@@ -127,7 +127,7 @@ while True:
 """
 
 hour = int(total_sec // 3600)
-min = int(total_sec //60 )% 60
+min = int((total_sec //60 )% 60)
 sec = int(total_sec % 60)
 
 
