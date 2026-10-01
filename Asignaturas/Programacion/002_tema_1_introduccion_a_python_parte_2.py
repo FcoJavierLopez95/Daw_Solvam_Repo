@@ -28,7 +28,11 @@ match number:
 # Algoritmo que lea dos números y nos diga cuál de ellos es mayor o bien si son
 # iguales.
 # ------------------------------------------------------------------------------
-
+""" while True:
+    print(input("introduce dos valores:"))
+    for i in range (2):
+        num_[i] =  """
+    
 
 
 
@@ -39,6 +43,22 @@ match number:
 # que un número sea par, se debe dividir entre dos y que su resto sea 0)
 # ------------------------------------------------------------------------------
 
+
+while True:    
+    try:
+        number = int(input("Introduce un número entero cualquiera: ")) 
+        break           
+    except ValueError:
+        print("Has introducido un dato no válido, porfavor intentalo de nuevo.")  
+
+
+if number==0:
+    print("El número es 0")
+elif (number%2) == 0:
+    print(f"El número{number} es par")
+else:
+    print(f"El número{number} es impar")
+ 
 
 
 
