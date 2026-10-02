@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Introducción a HTML y Clean Code - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+  <main>
+    <!-- 0. INTRODUCCION -->
+    <section id="introduction">
+      <h1>Introducción a HTML, Convenciones y Clean Code</h1>
+      <p>
+        Guía fundamental sobre la naturaleza de HTML, principios de desarrollo limpio, estándares de formateo y
+        comparativa de prácticas recomendadas frente a errores habituales.
+      </p>
+    </section>
+    <hr>
+
+    <!-- 1. QUE ES HTML5 -->
+    <section id="description">
+      <h2>1. Contexto y Naturaleza de HTML</h2>
+      <p>
+        <strong>HTML</strong> significa <em>HyperText Markup Language</em> (Lenguaje de Marcado de Hipertexto).
+      </p>
+      <ul>
+        <li>
+          <strong>No es un lenguaje de programación:</strong> No posee estructuras de control (bucles,
+          condicionales) ni ejecuta lógica algorítmica. Es un <strong>lenguaje de marcado</strong> basado en
+          etiquetas que define la estructura y el significado del contenido web.
+        </li>
+        <li>
+          <strong>Hipertexto:</strong> Hace referencia a la capacidad de interconectar documentos mediante
+          enlaces o hipervínculos (la base de la World Wide Web ideada por Tim Berners-Lee en 1989).
+        </li>
+        <li>
+          <strong>Estándar Vivo (HTML Living Standard):</strong> Mantenido por el <strong>WHATWG</strong> y el
+          <strong>W3C</strong>, garantiza la compatibilidad entre navegadores sin requerir versiones breaking
+          como las antiguas transiciones de HTML4 a XHTML.
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- 2. CONVENCIONES Y NOMENCLATURA -->
+    <section id="conventions">
+      <h2>2. Convenciones de Nomenclatura y Archivos</h2>
+      <p>
+        Seguir unas reglas claras al nombrar archivos evita errores de enlace en servidores web (especialmente
+        en Linux) y facilita que los motores de búsqueda entiendan tu web:
+      </p>
+      <ul>
+        <li>
+          <strong>Usa solo minúsculas (Case sensitivity):</strong> Los servidores Linux diferencian entre
+          mayúsculas y minúsculas. Usa <code>seccion-contacto.html</code> en lugar de
+          <code>SeccionContacto.HTML</code> para evitar enlaces rotos.
+        </li>
+        <li>
+          <strong>Separa las palabras con guiones medios (kebab-case):</strong> Utiliza guiones medios como en
+          <code>buenas-practicas.html</code>. Evita los espacios en blanco
+          (<code>buenas practicas.html</code>) y los guiones bajos (<code>buenas_practicas.html</code>), ya
+          que los buscadores no los leen de la misma forma.
+        </li>
+        <li>
+          <strong>Evita caracteres especiales y tildes:</strong> Los servidores no siempre gestionan bien las
+          eñes o las tildes. Escribe <code>introduccion.html</code> en lugar de
+          <code>introducción-español.html</code>.
+        </li>
+        <li>
+          <strong>Usa index.html para la página principal:</strong> El servidor busca automáticamente
+          <code>index.html</code> como punto de entrada por defecto al cargar tu dominio, por lo que no debes
+          llamarla <code>Inicio.html</code> ni <code>home.html</code>.
+        </li>
+      </ul>
+    </section>
+
+    <aside>
+      <h3>Demostración visual de un árbol de carpetas</h3>
+      <pre><code>
+/tu-proyecto-html
+├── index.html                &lt;!-- Único HTML en la raíz (Portada) --&gt;
+├── /pages                    &lt;!-- Carpeta para el resto de páginas --&gt;
+│   ├── 1-login.html
+│   ├── 2-signup.html
+│   └── 3-terms.html
+├── /assets                   &lt;!-- Carpeta para recursos estáticos --&gt;
+│   ├── /img                  &lt;!-- Imágenes, iconos y logotipos --&gt;
+│   ├── /css                  &lt;!-- Hojas de estilo --&gt;
+│   └── /js                   &lt;!-- Archivos de JavaScript --&gt;
+      </code></pre>
+    </aside>
+    <hr>
+
+    <!-- 3. FORMATO, TABULACIÓN E INDENTACIÓN -->
+    <section id="tab">
+      <h2>3. Tabulaciones, Indentación y Estructura Visual</h2>
+      <p>
+        El código limpio facilita la lectura y el mantenimiento en entornos colaborativos:
+      </p>
+      <ul>
+        <li>
+          <strong>Indentación estándar:</strong> Se recomienda usar <strong>2 espacios</strong> (o 4 espacios
+          según el equipo) por cada nivel de anidamiento. Evita mezclar tabulaciones y espacios.
+        </li>
+        <li>
+          <strong>Minúsculas obligatorias:</strong> Escribe todas las etiquetas y atributos en minúsculas (ej.
+          <code>&lt;div class="contenedor"&gt;</code> en lugar de
+          <code>&lt;DIV CLASS="contenedor"&gt;</code>).
+        </li>
+        <li>
+          <strong>Comillas en atributos:</strong> Encierra siempre los valores de los atributos en comillas
+          dobles <code>""</code> (ej. <code>class="boton"</code> en lugar de <code>class=boton</code>).
+        </li>
+      </ul>
+    </section>
+
+    <!-- ARQUITECTURA DE CARPETAS (SCAFFOLDING) -->
+    <section id="folder">
+      <h3>Arquitectura de Carpetas (Scaffolding)</h3>
+      <p>
+        En la industria profesional, el orden de los archivos es el primer paso del Clean Code. Nunca se guardan
+        decenas de archivos sueltos en el directorio principal, ya que dificulta la escalabilidad y el
+        mantenimiento del proyecto.
+      </p>
+      <ul>
+        <li><strong>La raíz (Root):</strong> El directorio principal del proyecto debe contener obligatoriamente
+          el archivo <code>index.html</code>. Cuando subas tu web a un servidor real, este buscará
+          automáticamente ese archivo exacto para arrancar la página principal.</li>
+        <li><strong>Carpetas organizativas:</strong> El resto de documentos HTML secundarios deben agruparse en
+          subcarpetas lógicas, comúnmente llamadas <code>/pages</code> o <code>/views</code>.</li>
+        <li><strong>Recursos estáticos (Assets):</strong> Las imágenes, iconos y, más adelante, los archivos de
+          diseño (CSS) y lógica (JS), se guardan separados en una carpeta genérica llamada
+          <code>/assets</code>.
+        </li>
+      </ul>
+    </section>
+    <hr>
+
+    <!-- 4 PRINCIPIOS DE CLEAN CODE -->
+    <section id="cleancode">
+      <h2>4. Separación de responsabilidades <em>Semántica y estilos</em></h2>
+      <ul>
+        <li>
+          <strong>Separación de Responsabilidades:</strong> HTML define <em>estructura y contenido</em>;
+          CSS se encarga del <em>diseño visual</em>; JavaScript gestiona la <em>interactividad</em>. No uses estilos en
+          línea (<code>style=""</code>) ni eventos JS incrustados.
+        </li>
+        <li>
+          <strong>Principio de Accesibilidad (A11y):</strong> Incluye siempre el atributo
+          <code>alt=""</code> descriptivo en imágenes y utiliza etiquetas como <code>&lt;main&gt;</code>,
+          <code>&lt;nav&gt;</code> o <code>&lt;label&gt;</code> para lectores de pantalla.
+        </li>
+        <li>
+          <strong>Semántica estricta:</strong> Reemplaza la "divitis" (uso excesivo de
+          <code>&lt;div&gt;</code>) por etiquetas con significado contextual (<code>&lt;article&gt;</code>,
+          <code>&lt;section&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>).
+        </li>
+        <li>
+          <strong>Jerarquía de encabezados única:</strong> Un único <code>&lt;h1&gt;</code> por página,
+          seguido de un orden lógico sin saltarse niveles (<code>&lt;h2&gt;</code> antes de <code>&lt;h3&gt;</code>).
+        </li>
+      </ul>
+
+      <!-- MALAS PRÁCTICAS Y OBSOLETAS -->
+      <aside>
+        <h3>Ejemplos de malas prácticas y etiquetas obsoletas</h3>
+        <pre><code>
+&lt;!-- Negrita puramente visual --&gt;
+&lt;p&gt;&lt;b&gt;Este Texto está en negrita pero es una mala práctica&lt;/b&gt;&lt;/p&gt;
+
+&lt;!-- Cursiva puramente visual --&gt;
+&lt;p&gt;&lt;i&gt;Esto es Texto en cursiva y también es mala práctica&lt;/i&gt;&lt;/p&gt;
+
+&lt;!-- Subrayado visual --&gt;
+&lt;p&gt;&lt;u&gt;Este texto está subrayado y también es una mala práctica&lt;/u&gt;&lt;/p&gt;
+
+&lt;!-- Etiqueta de tachado obsoleta --&gt;
+&lt;p&gt;&lt;strike&gt;Este es un texto "strike", tacha el texto pero es una mala práctica. Usa &amp;lt;del&amp;gt; o &amp;lt;s&amp;gt;&lt;/strike&gt;&lt;/p&gt;
+
+&lt;!-- Formato de fuente y color obsoleto --&gt;
+&lt;p&gt;&lt;font face="Arial" size="4" color="red"&gt;Este texto cambia de fuente, tamaño y color con la etiqueta font pero es una mala práctica&lt;/font&gt;&lt;/p&gt;
+
+&lt;!-- Cambio de tamaño obsoleto --&gt;
+&lt;p&gt;&lt;big&gt;Este texto usa big para aumentar el tamaño de la letra pero es una mala práctica&lt;/big&gt;&lt;/p&gt;
+
+&lt;!-- Alineación centrada obsoleta --&gt;
+&lt;p&gt;&lt;center&gt;Este texto está centrado con la etiqueta center pero es una mala práctica&lt;/center&gt;&lt;/p&gt;
+
+&lt;!-- Estilos en línea --&gt;
+&lt;p style="font-family: sans-serif; font-size: 20px; color: blue;"&gt;Este texto usa estilos en línea con el atributo style para cambiar la fuente y el tamaño, lo cual es una mala práctica&lt;/p&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- 5. EL DOM -->
+    <section id="dom">
+      <h2>5. El DOM (Document Object Model)</h2>
+      <p>
+        El <strong>DOM</strong> es una interfaz de programación que los navegadores crean al leer tu documento HTML.
+        Es una pieza fundamental en el desarrollo web frontend:
+      </p>
+      <ul>
+        <li>
+          <strong>Estructura de árbol:</strong> El navegador interpreta las etiquetas HTML y las convierte en un
+          árbol jerárquico de nodos (objetos). La etiqueta <code>&lt;html&gt;</code> es la raíz, de la cual nacen
+          ramas como <code>&lt;head&gt;</code> y <code>&lt;body&gt;</code>.
+        </li>
+        <li>
+          <strong>El puente con JavaScript:</strong> Gracias al DOM, lenguajes como JS pueden leer, modificar,
+          añadir o eliminar elementos, textos y estilos de la página en tiempo real.
+        </li>
+        <li>
+          <strong>HTML vs DOM:</strong> El HTML es el código estático que tú escribes en tu editor. El DOM es la
+          representación viva que el navegador construye en la memoria y que puedes inspeccionar (pulsando F12 en
+          tu navegador).
+        </li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!-- 6. ACCESIBILIDAD WEB -->
+    <section id="Accessibility">
+      <h2>6. Accesibilidad Web (a11y) Básica</h2>
+      <p>
+        La accesibilidad web <strong>a11y</strong> asegura que las personas con algún tipo de discapacidad (visual,
+        auditiva, motora o cognitiva) puedan percibir, entender y navegar por tu web sin barreras.
+      </p>
+      <ul>
+        <li>
+          <strong>Programamos para personas, no solo para navegadores:</strong> Tecnologías asistivas como los
+          lectores de pantalla (Screen Readers) dependen enteramente de cómo esté estructurado tu HTML para poder
+          "leer" la página a usuarios con discapacidad visual.
+        </li>
+        <li>
+          <strong>La semántica es accesibilidad:</strong> Usar la etiqueta <code>&lt;button&gt;</code> en lugar de
+          un <code>&lt;div&gt;</code> con forma de botón permite que un lector de pantalla anuncie que es un
+          elemento interactivo y que el usuario pueda activarlo usando el teclado (teclas Enter o Espacio).
+        </li>
+        <li>
+          <strong>Prácticas obligatorias:</strong> Atributos como el <code>alt</code> descriptivo en las imágenes,
+          o el uso de <code>&lt;label&gt;</code> vinculados a sus inputs en los formularios, no son simples
+          recomendaciones académicas; en el mundo empresarial son requisitos legales para cumplir normativas como
+          las WCAG (Web Content Accessibility Guidelines).
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

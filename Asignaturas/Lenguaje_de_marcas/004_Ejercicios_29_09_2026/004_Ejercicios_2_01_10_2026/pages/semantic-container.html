@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Semántica Estructural - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+
+  <main>
+    <section id="semantica-intro">
+      <h1>3. Semántica Estructural (Layout moderno)</h1>
+      <p>
+        En HTML5, el diseño de la página dejó de ser un amalgama de <code>&lt;div&gt;</code> genéricos para adoptar
+        etiquetas con significado propio (semánticas). Estas etiquetas describen su propósito y el tipo de contenido que
+        albergan, construyendo la arquitectura lógica del documento (lo que en la industria se conoce como
+        <em>landmarks</em> o regiones).
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 3.1: LANDMARKS PRINCIPALES -->
+    <section id="landmarks-principales">
+      <h2>3.1 Landmarks principales: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>
+      </h2>
+
+      <article id="zonas-macro">
+        <h3>Las tres grandes zonas de la web</h3>
+        <p>
+          Estas tres etiquetas definen la macro-estructura de la inmensa mayoría de páginas web modernas, delimitando
+          claramente el principio, el centro y el final del documento.
+        </p>
+        <ul>
+          <li><strong><code>&lt;header&gt;</code> (La cabecera):</strong> Representa el contenido introductorio de una
+            página o sección. Suele contener el logotipo, el título principal y la navegación global. Puede haber varios
+            en un documento (por ejemplo, la cabecera general de la web y la cabecera específica de un artículo).</li>
+          <li><strong><code>&lt;main&gt;</code> (El contenido principal):</strong> Es el corazón del documento. Contiene
+            la información central y única de esa página específica. <strong>Regla estricta:</strong> Solo puede haber
+            un único <code>&lt;main&gt;</code> visible por documento y no debe estar anidado dentro de otras etiquetas
+            estructurales.</li>
+          <li><strong><code>&lt;footer&gt;</code> (El pie de página):</strong> Cierra la página o sección. Suele
+            contener información de autoría, enlaces legales, redes sociales o el copyright. Al igual que el header,
+            puedes usarlo a nivel global de página o al final de una sección concreta.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 3.2: SECTION VS ARTICLE -->
+    <section id="seccionamiento">
+      <h2>3.2 Seccionamiento del contenido: <code>&lt;section&gt;</code> vs <code>&lt;article&gt;</code></h2>
+
+      <article id="el-eterno-debate">
+        <h3>El eterno debate explicado bien</h3>
+        <p>
+          Es la confusión más habitual entre los desarrolladores junior. Aunque ambas sirven para agrupar contenido
+          dentro del <code>&lt;main&gt;</code>, su propósito conceptual es totalmente distinto.
+        </p>
+        <ul>
+          <li><strong><code>&lt;article&gt;</code> (Independiente y reutilizable):</strong> Representa una pieza de
+            contenido completamente autónoma. La regla de oro es: ¿Podrías extraer este bloque, publicarlo en otra web,
+            en un periódico o en un feed RSS y seguiría teniendo sentido por sí mismo? Si la respuesta es sí (un post de
+            un blog, un comentario en un foro, una tarjeta de producto), usa <code>&lt;article&gt;</code>.</li>
+          <li><strong><code>&lt;section&gt;</code> (Agrupación temática):</strong> Agrupa contenido relacionado por una
+            misma temática, pero que no tendría sentido si se extrae de su contexto global. Un
+            <code>&lt;section&gt;</code> casi siempre debe ir encabezado por un título (<code>&lt;h2&gt;</code> -
+            <code>&lt;h6&gt;</code>). Se usa para bloques como "Nuestros Servicios", "Información de Contacto" o los
+            capítulos de un libro.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 3.3: NAV, ASIDE Y CLEAN CODE -->
+    <section id="navegacion-aside">
+      <h2>3.3 Navegación y contenido complementario: <code>&lt;nav&gt;</code> y <code>&lt;aside&gt;</code></h2>
+
+      <article id="nav-y-aside">
+        <h3>Navegación principal y barras laterales</h3>
+        <p>
+          Ambas etiquetas manejan contenido que orbita alrededor del flujo principal de información, ayudando al usuario
+          a ubicarse o a profundizar, pero sin ser el foco principal.
+        </p>
+        <ul>
+          <li><strong><code>&lt;nav&gt;</code> (Navegación):</strong> Destinado a los bloques de enlaces de navegación
+            principales (el menú superior, un índice de contenidos o la paginación). No todos los grupos de enlaces
+            deben llevar <code>&lt;nav&gt;</code>, solo los críticos para moverse por la web.</li>
+          <li><strong><code>&lt;aside&gt;</code> (Contenido tangencial):</strong> Representa contenido indirectamente
+            relacionado con la sección en la que se encuentra. Suele maquetarse como una barra lateral (sidebar) y
+            contiene banners, cajas de suscripción, citas destacadas o publicidad. Si lo eliminas, el contenido
+            principal sigue entendiéndose perfectamente.</li>
+        </ul>
+      </article>
+
+      <article id="cleancode-seo">
+        <h3>Nota de Clean Code: ¿Por qué esto mejora el SEO?</h3>
+        <p>
+          Usar estas etiquetas semánticas en lugar de amontonar <code>&lt;div&gt;</code> genéricos tiene un impacto
+          brutal en el mundo real, concretamente en dos frentes:
+        </p>
+        <ul>
+          <li><strong>Impacto en SEO (Google):</strong> Los motores de búsqueda dan distinta prioridad analítica al
+            contenido según dónde esté. Google sabe que el texto dentro de un <code>&lt;article&gt;</code> es el
+            contenido de valor por el que debe rankear tu página, mientras que dará menos peso SEO a las palabras clave
+            que encuentre perdidas dentro de un <code>&lt;footer&gt;</code> o un <code>&lt;aside&gt;</code>. Un
+            <code>&lt;div&gt;</code> no transmite esta inteligencia.</li>
+          <li><strong>Accesibilidad (Lectores de pantalla):</strong> Los usuarios ciegos utilizan atajos de teclado para
+            "saltar" directamente a zonas específicas de la web (ej. pulsar una tecla para ir directos al
+            <code>&lt;main&gt;</code> o al <code>&lt;nav&gt;</code>). Si tu web está hecha solo de divs, les obligas a
+            "escuchar" toda la cabecera y menús cada vez que recargan la página, destruyendo su experiencia de usuario.
+          </li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Ejemplo de layout semántico moderno</h3>
+        <pre><code>
+&lt;header&gt;
+  &lt;img src="logo.png" alt="Logotipo de la empresa"&gt;
+  &lt;nav&gt;
+    &lt;!-- Menú de navegación principal --&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+  &lt;section id="noticias"&gt;
+    &lt;h2&gt;Últimas Noticias&lt;/h2&gt;
+    
+    &lt;!-- Cada noticia es independiente y tiene sentido por sí misma --&gt;
+    &lt;article&gt;
+      &lt;h3&gt;Lanzamiento de HTML5&lt;/h3&gt;
+      &lt;p&gt;El nuevo estándar ya está aquí...&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+  
+  &lt;aside&gt;
+    &lt;!-- Publicidad o enlaces de interés relacionados --&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2026 Todos los derechos reservados.&lt;/p&gt;
+&lt;/footer&gt;
+                </code></pre>
+      </aside>
+    </section>
+
+  </main>
+
+  <hr>
+
+<footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- Imagen de HTML5 en el header -->
+    <img src="../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+  <hr>
+  <main>
+    <section>
+      <h2>Citas y Referencias</h2>
+      <pre><code>
+&lt;blockquote cite=dirección de la fuente&gt;<blockquote cite="dirección de la fuente"><p>Este es un texto "blockquote", se usa para citas largas o párrafos completos extraídos de otra fuente de información. El atributo "cite" indica la URL de la fuente original.</p></blockquote>&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;q cite="dirección de la fuente"&gt;<p><q cite="dirección de la fuente">Este es un texto "q", se usa para citas cortas en línea dentro de un mismo párrafo. También admite el atributo "cite" con la URL de la fuente.</q></p>&lt;/q&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;cite&gt;<p><cite>Este es un texto "cite", sirve para referenciar el título de una obra, libro o el autor del contenido</cite></p>&lt;/cite&gt;&lt;/p&gt;
+            
+      </code></pre>
+    </section>
+    <hr>
+
+    <section>
+      <h2>Lista de Definiciones (&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt;)</h2>
+      <pre><code>
+&lt;dl&gt;  &lt;--! Carpeta contenedora  --&gt;
+&lt;dt&gt;Término&lt;/dt&gt;   &lt;--! Nombre del término a definir --&gt;
+&lt;dd&gt;<dd>Descripción  &lt;--! Definition Description: contiene la explicación o definición del término --&gt;</dd>&lt;/dd&gt;
+&lt;dl&gt;
+      </code></pre>
+    </section>
+    <hr>
+    <section>
+      <h2>Abreviaturas y Siglas</h2>
+      <pre><code>
+        <p>&lt;p&gt;&lt;abbr title="Abreviatura"&gt;<abbr title="Abreviatura">abr</abbr>&lt;/abbr&gt;&lt;/p&gt; &lt;-- Este es un texto "abbr", sirve para definir siglas o abreviaturas aportando su significado completo al pasar el ratón por encima  --&gt;</p>
+      </code></pre>
+    </section>
+    <hr>
+    <footer>
+      <!-- Imagen de Solvam en el footer con enlace seguro -->
+      <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+        <img src="../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+      </a>
+
+      <p>
+        &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+      </p>
+
+      <p>
+        <small>
+          Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+          <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+        </small>
+      </p>
+
+      <a href="index.html">Vuelve al <strong>inicio</strong></a>
+
+    </footer>
+
+</body>
+
+</html>

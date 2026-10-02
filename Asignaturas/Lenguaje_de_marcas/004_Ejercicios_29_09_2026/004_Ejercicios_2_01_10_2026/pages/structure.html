@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>El Esqueleto del Documento - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+
+  <main>
+    <section id="esqueleto-raiz">
+      <h1>2. El Esqueleto del Documento</h1>
+      <p>
+        Todo documento HTML profesional debe comenzar con una estructura base innegociable. Estas primeras líneas son
+        las encargadas de decirle al navegador qué versión de HTML estás usando, cuál es la raíz de tu documento y en
+        qué idioma está escrito el contenido.
+      </p>
+    </section>
+
+    <hr>
+
+    <section id="doctype-html-lang">
+      <h2>2.1 <code>&lt;!DOCTYPE html&gt;</code>, la etiqueta <code>&lt;html&gt;</code> y el atributo <code>lang</code>
+      </h2>
+
+      <!-- EXPLICACIÓN DOCTYPE -->
+      <article id="doctype">
+        <h3>El preámbulo: <code>&lt;!DOCTYPE html&gt;</code></h3>
+        <p>
+          Aunque va entre corchetes angulares, no es una etiqueta HTML, sino una declaración de tipo de documento.
+        </p>
+        <ul>
+          <li><strong>Propósito:</strong> Le dice al navegador de forma explícita que el código que sigue es HTML5
+            moderno.</li>
+          <li><strong>Clean Code:</strong> Evita que el navegador entre en el <em>"Quirks Mode"</em> (Modo de
+            compatibilidad), el cual emula errores de navegadores antiguos y rompe los diseños actuales.</li>
+          <li><strong>Regla de oro:</strong> Debe ser obligatoriamente la primera línea de tu documento, sin espacios ni
+            saltos de línea previos.</li>
+        </ul>
+      </article>
+
+      <!-- EXPLICACIÓN HTML -->
+      <article id="html-tag">
+        <h3>El elemento raíz: <code>&lt;html&gt;</code></h3>
+        <p>
+          Es la etiqueta contenedora principal y el punto de partida de todo tu código.
+        </p>
+        <ul>
+          <li><strong>Contenedor global:</strong> Absolutamente todos los elementos de tu página (excepto el DOCTYPE)
+            deben estar anidados dentro de las etiquetas de apertura <code>&lt;html&gt;</code> y cierre
+            <code>&lt;/html&gt;</code>.</li>
+          <li><strong>Árbol del DOM:</strong> A nivel de arquitectura, esta etiqueta representa la <strong>raíz</strong>
+            (root) absoluta del documento para el navegador.</li>
+        </ul>
+      </article>
+
+      <!-- EXPLICACIÓN LANG (A11Y y SEO) -->
+      <article id="atribute-lang">
+        <h3>El atributo <code>lang</code> (SEO y Accesibilidad)</h3>
+        <p>
+          Es el atributo obligatorio de la etiqueta raíz (ej. <code>&lt;html lang="es"&gt;</code>) que indica el idioma
+          principal del contenido.
+        </p>
+        <ul>
+          <li><strong>Accesibilidad (a11y):</strong> Los lectores de pantalla (Screen Readers) usan este atributo para
+            saber con qué acento pronunciar el texto. Si una web en español tiene <code>lang="en"</code>, el lector la
+            leerá con acento inglés, haciéndola incomprensible.</li>
+          <li><strong>SEO:</strong> Ayuda a motores de búsqueda como Google a indexar tu página en los resultados
+            correctos para los usuarios de cada región.</li>
+          <li><strong>Traducción:</strong> Navegadores como Chrome lo utilizan para decidir si deben ofrecerle al
+            usuario la traducción automática de la página.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Ejemplo del esqueleto base completo</h3>
+        <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+  &lt;head&gt;
+    &lt;!-- Aquí irán los metadatos --&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Aquí irá el contenido visible --&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 2.2: EL HEAD Y METADATOS -->
+    <section id="head-meta">
+      <h2>2.2 El <code>&lt;head&gt;</code>: Metadatos vitales, <code>&lt;title&gt;</code> y favicon</h2>
+      <p>
+        Contiene la configuración de tu página. Todo lo que anides aquí (salvo el título de la pestaña y el favicon)
+        será invisible para el usuario, pero es vital para el navegador, el SEO y las redes sociales.
+      </p>
+
+      <article id="charset">
+        <h3>Codificación: <code>&lt;meta charset="UTF-8"&gt;</code></h3>
+        <p>
+          Es el metadato que asegura que el navegador interprete correctamente caracteres especiales, tildes, eñes y
+          emojis.
+        </p>
+        <ul>
+          <li><strong>Regla de Clean Code:</strong> Debe ser estrictamente el primer elemento dentro del
+            <code>&lt;head&gt;</code>.</li>
+          <li><strong>Seguridad:</strong> Colocarlo al principio evita vulnerabilidades de seguridad y fallos de
+            renderizado al forzar al navegador a conocer la codificación antes de leer el resto.</li>
+        </ul>
+      </article>
+
+      <article id="viewport">
+        <h3>Diseño Móvil (Responsive): <code>viewport</code></h3>
+        <p>
+          Es la directiva obligatoria para que la web funcione de forma correcta y fluida en dispositivos móviles.
+        </p>
+        <ul>
+          <li><strong>Código:</strong>
+            <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></li>
+          <li><strong>Funcionamiento:</strong> Le ordena al móvil que adapte la página al ancho de su pantalla
+            (<code>width=device-width</code>) con un zoom normal (<code>initial-scale=1.0</code>), evitando que cargue
+            la vista microscópica de escritorio.</li>
+        </ul>
+      </article>
+
+      <article id="title">
+        <h3>El título: <code>&lt;title&gt;</code></h3>
+        <p>
+          Es el texto descriptivo que aparece en la pestaña del navegador y como enlace principal en los resultados de
+          búsqueda.
+        </p>
+        <ul>
+          <li><strong>Importancia SEO:</strong> Es uno de los factores de posicionamiento orgánico más importantes en
+            Google.</li>
+          <li><strong>Buena práctica:</strong> Cada archivo HTML de tu proyecto debe tener un título único y
+            representativo; nunca los dupliques entre distintas páginas.</li>
+        </ul>
+      </article>
+
+      <article id="favicon">
+        <h3>El Favicon</h3>
+        <p>
+          Es el pequeño logotipo o icono que aparece junto al título de la página en las pestañas del navegador.
+        </p>
+        <ul>
+          <li><strong>Código:</strong> <code>&lt;link rel="icon" href="icono.png" type="image/x-icon"&gt;</code></li>
+          <li><strong>Usabilidad:</strong> Mejora drásticamente la experiencia del usuario, permitiendo localizar e
+            identificar rápidamente tu web cuando se tienen múltiples pestañas abiertas.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 2.3: EL BODY -->
+    <section id="body-content">
+      <h2>2.3 El <code>&lt;body&gt;</code>: Donde vive el contenido visible</h2>
+      <p>
+        Si el <code>&lt;head&gt;</code> es el cerebro lleno de lógica invisible, el <code>&lt;body&gt;</code> es el
+        cuerpo. Es el contenedor absoluto de todo lo que el usuario ve, lee e interactúa en la pantalla.
+      </p>
+
+      <article id="body-reglas">
+        <h3>Reglas esenciales del contenedor</h3>
+        <p>
+          Su uso es restrictivo y debe obedecer los estándares estructurales del HTML5.
+        </p>
+        <ul>
+          <li><strong>Unicidad:</strong> Al igual que el <code>&lt;head&gt;</code>, solo puede existir un único elemento
+            <code>&lt;body&gt;</code> por documento HTML.</li>
+          <li><strong>Contenido exclusivo:</strong> Las etiquetas visuales y de texto (como <code>&lt;main&gt;</code>,
+            <code>&lt;header&gt;</code>, imágenes o formularios) deben vivir exclusivamente dentro de este bloque.</li>
+        </ul>
+      </article>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

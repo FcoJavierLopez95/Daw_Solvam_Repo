@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Contenedores Genéricos - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+
+  <main>
+    <section id="contenedores-intro">
+      <h1>4. Contenedores Genéricos (El puente hacia CSS)</h1>
+      <p>
+        A diferencia de etiquetas como <code>&lt;header&gt;</code> o <code>&lt;p&gt;</code>, los contenedores genéricos
+        no tienen ningún valor semántico. No le dicen nada al navegador ni a los motores de búsqueda sobre su contenido.
+        Son "cajas vacías" cuya única finalidad es agrupar elementos para poder aplicarles estilos con CSS o
+        manipularlos con JavaScript.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 4.1: EL DIV -->
+    <section id="contenedor-bloque">
+      <h2>4.1 El bloque: <code>&lt;div&gt;</code></h2>
+
+      <article id="div-definicion">
+        <h3>El contenedor de bloque genérico</h3>
+        <p>
+          La etiqueta <code>&lt;div&gt;</code> (del inglés <em>division</em>) es el elemento contenedor más utilizado en
+          la construcción de layouts (diseños) web.
+        </p>
+        <ul>
+          <li><strong>Comportamiento por defecto:</strong> Es un elemento de <em>bloque</em> (block-level). Esto
+            significa que siempre comienza en una línea nueva y ocupa todo el ancho disponible de su contenedor padre,
+            empujando los siguientes elementos hacia abajo.</li>
+          <li><strong>Caso de uso ideal:</strong> Agrupar un conjunto de elementos lógicos para aplicarles un sistema de
+            cuadrícula (CSS Grid), flexbox, o para crear tarjetas visuales (cards).</li>
+          <li><strong>Falta de semántica:</strong> Para un lector de pantalla o para Google, un <code>&lt;div&gt;</code>
+            es invisible en cuanto a significado. Solo ven su contenido interno.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 4.2: EL SPAN -->
+    <section id="contenedor-linea">
+      <h2>4.2 La línea: <code>&lt;span&gt;</code></h2>
+
+      <article id="span-definicion">
+        <h3>El contenedor en línea genérico</h3>
+        <p>
+          La etiqueta <code>&lt;span&gt;</code> es el hermano menor del <code>&lt;div&gt;</code>. Sirve exactamente para
+          lo mismo (agrupar sin aportar significado), pero está diseñado para usarse dentro de fragmentos de texto u
+          otros elementos en línea.
+        </p>
+        <ul>
+          <li><strong>Comportamiento por defecto:</strong> Es un elemento <em>en línea</em> (inline). No genera saltos
+            de línea y solo ocupa el ancho estrictamente necesario para envolver su contenido.</li>
+          <li><strong>Caso de uso ideal:</strong> Aislar una palabra concreta dentro de un párrafo para cambiarle el
+            color con CSS, o para inyectar un pequeño icono de una librería externa junto a un texto.</li>
+          <li><strong>Restricción importante:</strong> Un <code>&lt;span&gt;</code> nunca debe contener elementos de
+            bloque en su interior (como párrafos o encabezados). Solo debe contener texto u otros elementos inline.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 4.3: BUENAS PRÁCTICAS -->
+    <section id="buenas-practicas">
+      <h2>4.3 Buenas prácticas y Clean Code</h2>
+
+      <article id="divitis-semantica">
+        <h3>Cuándo usarlos y cuándo evitarlos</h3>
+        <p>
+          El abuso de contenedores genéricos es uno de los peores hábitos en el desarrollo web inicial, un antipatrón
+          conocido en la industria como <strong>"divitis"</strong> (una enfermedad de divs).
+        </p>
+        <ul>
+          <li><strong>La regla de oro semántica:</strong> Nunca uses un <code>&lt;div&gt;</code> si existe una etiqueta
+            HTML5 que describa mejor esa sección. Si es un menú, usa <code>&lt;nav&gt;</code>. Si es el pie de página,
+            usa <code>&lt;footer&gt;</code>.</li>
+          <li><strong>El uso correcto (El puente):</strong> Usa los <code>&lt;div&gt;</code> cuando necesites una caja
+            puramente visual. Por ejemplo, envolver una imagen y su texto para crear una "tarjeta" de producto, a la
+            cual le añadirás una clase <code>class="producto-card"</code> para maquetarla en CSS.</li>
+          <li><strong>Accesibilidad:</strong> Jamás uses un <code>&lt;div&gt;</code> o un <code>&lt;span&gt;</code> para
+            simular un botón o un enlace dándoles estilo y un evento click con JavaScript. Esto destruye la navegación
+            por teclado y bloquea a los lectores de pantalla. Usa siempre <code>&lt;button&gt;</code> o
+            <code>&lt;a&gt;</code>.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Ejemplo de uso correcto de contenedores genéricos</h3>
+        <pre><code>
+&lt;!-- El div agrupa contenido puramente por necesidades de diseño visual --&gt;
+&lt;div class="tarjeta-usuario"&gt;
+  &lt;h3&gt;Perfil de Usuario&lt;/h3&gt;
+  
+  &lt;!-- El span aísla una palabra específica para pintarla de rojo o verde en CSS --&gt;
+  &lt;p&gt;
+    Estado de la cuenta: &lt;span class="estado-activo"&gt;Verificada&lt;/span&gt;
+  &lt;/p&gt;
+  
+  &lt;button&gt;Cerrar sesión&lt;/button&gt;
+&lt;/div&gt;
+                </code></pre>
+      </aside>
+    </section>
+
+  </main>
+
+  <hr>
+
+ <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

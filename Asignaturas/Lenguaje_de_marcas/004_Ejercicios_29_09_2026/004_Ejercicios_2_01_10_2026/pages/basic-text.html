@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Fundamentos del Texto - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+
+  <main>
+    <section id="texto-intro">
+      <h1>5. Fundamentos del Texto y Navegación</h1>
+      <p>
+        HTML proporciona una rica variedad de etiquetas semánticas para dar significado y estructura al texto.
+        En esta sección exploraremos los cimientos absolutos que se utilizan en la inmensa mayoría de las páginas web
+        para estructurar la información y conectar documentos.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 5.1: COMENTARIOS -->
+    <article id="coment">
+      <h2>5.1 Comentarios</h2>
+      <p>
+        Los comentarios son fragmentos de texto que el navegador ignora por completo y no muestra en la página web. Se
+        utilizan para documentar el código, dejar notas o explicaciones para otros desarrolladores (o para ti mismo en
+        el futuro), y para ocultar temporalmente partes del código mientras haces pruebas.
+      </p>
+      <code><p>&lt;!-- Esto es un comentario en HTML --&gt;</p></code>
+    </article>
+
+    <hr>
+
+    <!-- SECCIÓN 5.2: ENCABEZADOS -->
+    <section id="encabezados">
+      <h2>5.2 Jerarquía de encabezados (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>)</h2>
+
+      <article id="jerarquia-seo">
+        <h3>Reglas de SEO y Accesibilidad</h3>
+        <p>
+          Los encabezados (<em>headers</em>) establecen la jerarquía del contenido, funcionando igual que el
+          índice de un libro.
+        </p>
+        <ul>
+          <li><strong>Propósito Semántico:</strong> Indican la estructura de la información a los motores de
+            búsqueda y lectores de pantalla.</li>
+          <li><strong>Niveles de Jerarquía:</strong> <code>&lt;h1&gt;</code> representa el título de mayor
+            importancia, mientras que <code>&lt;h6&gt;</code> es el nivel más bajo.</li>
+          <li><strong>No saltarse niveles (a11y):</strong> Por accesibilidad, nunca debes saltar de un
+            <code>&lt;h2&gt;</code> a un <code>&lt;h4&gt;</code>. El orden debe ser estrictamente secuencial
+            para que los usuarios ciegos puedan navegar el documento lógicamente.
+          </li>
+          <li><strong>Regla de oro de Clean Code:</strong> Jamás uses estas etiquetas simplemente para hacer
+            el texto "más grande". El tamaño visual se gestiona siempre en CSS.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <pre><code>
+          <h1>&lt;h1&gt;Este es un título de Nivel 1 (Principal)&lt;/h1&gt;</h1>
+          <h2>&lt;h2&gt;Este es un título de Nivel 2 (Sección)&lt;/h2&gt;</h2>
+          <h3>&lt;h3&gt;Este es un título de Nivel 3 (Subsección)&lt;/h3&gt;</h3>
+          <h4>&lt;h4&gt;Este es un título de Nivel 4 (Sub-subsección)&lt;/h4&gt;</h4>
+          <h5>&lt;h5&gt;Este es un título de Nivel 5 (Detalle secundario)&lt;/h5&gt;</h5>
+          <h6>&lt;h6&gt;Este es un título de Nivel 6 (Nivel más bajo de jerarquía)&lt;/h6&gt;</h6>
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 5.3: PÁRRAFOS, SALTOS Y SEPARADORES -->
+    <section id="parrafos-saltos">
+      <h2>5.3 Párrafos (<code>&lt;p&gt;</code>), saltos (<code>&lt;br&gt;</code>) y separadores
+        (<code>&lt;hr&gt;</code>)</h2>
+
+      <article id="etiqueta-p">
+        <h3>El Párrafo: <code>&lt;p&gt;</code></h3>
+        <p>
+          Es el elemento base para bloques de texto convencional. Al ser un elemento de bloque, genera
+          automáticamente un margen superior e inferior.
+        </p>
+        <ul>
+          <li><strong>Uso correcto:</strong> Debe contener únicamente texto, imágenes en línea u otros
+            elementos semánticos de línea (como <code>&lt;strong&gt;</code> o <code>&lt;a&gt;</code>).</li>
+        </ul>
+      </article>
+
+      <article id="etiqueta-br">
+        <h3>El Salto de Línea: <code>&lt;br&gt;</code></h3>
+        <p>
+          Fuerza un salto de línea dentro de un mismo párrafo, como al escribir un poema o una dirección
+          postal.
+        </p>
+        <ul>
+          <li><strong>Cuándo usarlo:</strong> Solo cuando el salto de línea forma parte estructural del contenido (ej.
+            las líneas de un poema no tendrían sentido todas seguidas).</li>
+          <li><strong>Mala práctica (Clean Code):</strong> NUNCA uses múltiples etiquetas
+            <code>&lt;br&gt;</code> seguidas para crear espacio en blanco o márgenes entre elementos. Ese es
+            el trabajo de CSS (propiedades <code>margin</code> o <code>padding</code>).
+          </li>
+        </ul>
+      </article>
+
+      <article id="etiqueta-hr">
+        <h3>El Separador Temático: <code>&lt;hr&gt;</code></h3>
+        <p>
+          Representa un cambio de tema o una transición estructural en el documento (justo como las líneas horizontales
+          que separan las distintas secciones de esta página).
+        </p>
+        <ul>
+          <li><strong>Diferencia con <code>&lt;br&gt;</code>:</strong> Mientras que el <code>&lt;br&gt;</code> rompe una
+            línea dentro de un mismo bloque lógico de texto, el <code>&lt;hr&gt;</code> se utiliza para separar bloques
+            de contenido completamente distintos y no relacionados.</li>
+          <li><strong>Semántica frente a diseño:</strong> Antiguamente se usaba solo para dibujar una línea visual. En
+            HTML5 tiene peso semántico e indica a los lectores de pantalla y a los motores de búsqueda que el tema de
+            lectura ha cambiado.</li>
+        </ul>
+      </article>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN 5.4: ENLACES -->
+    <section id="enlaces">
+      <h2>5.4 Enlaces (<code>&lt;a&gt;</code>) y atributos seguros</h2>
+
+      <article id="etiqueta-a">
+        <h3>El ancla y el hipertexto</h3>
+        <p>
+          La etiqueta <code>&lt;a&gt;</code> (anchor) es la esencia de la Web, permitiendo conectar documentos
+          entre sí.
+        </p>
+        <ul>
+          <li><strong>El atributo <code>href</code>:</strong> Es obligatorio. Indica la URL de destino (puede
+            ser una ruta absoluta hacia otra web o una ruta relativa dentro de tu propio proyecto).</li>
+          <li><strong>Abrir en nueva pestaña:</strong> Se logra añadiendo <code>target="_blank"</code>. Se usa
+            habitualmente para enlaces que apuntan a páginas externas.</li>
+          <li><strong>Seguridad vital (noopener):</strong> Si usas <code>target="_blank"</code>, debes añadir
+            SIEMPRE el atributo <code>rel="noopener noreferrer"</code>. Esto evita vulnerabilidades de
+            seguridad donde la página de destino podría tomar el control malicioso de tu página de origen
+            mediante JavaScript.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Demostración visual</h3>
+        <pre><code>
+<p>&lt;a href="https://solvam.es" target="_blank" rel="noopener noreferrer"&gt;<a href="https://solvam.es" target="_blank" rel="noopener noreferrer">Este es un enlace externo seguro a Solvam</a>&lt;/a&gt;</p>
+                </code></pre>
+      </aside>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

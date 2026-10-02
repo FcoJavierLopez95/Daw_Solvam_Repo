@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Ejercicio 1: Encabezados en HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <!-- Logo de HTML5 en el header -->
+    <img src="../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo de HTML5">
+    <h1>Hello HTML!</h1>
+  </header>
+
+  <main>
+    <h1>Encabezados <em>Heads</em> (&lt;h1&gt; a &lt;h6&gt;)</h1>
+    <hr>
+
+    <!-- EXPLICACIÓN TEÓRICA SOBRE LOS ENCABEZADOS -->
+    <section>
+      <h2>¿Qué son los encabezados y cómo se usan?</h2>
+      <p>
+        Los encabezados (<em>headers</em>) son etiquetas semánticas que van desde <code>&lt;h1&gt;</code> hasta
+        <code>&lt;h6&gt;</code>. Sirven para establecer la **jerarquía e importancia del contenido** dentro de una
+        página web, funcionando igual que el índice de un libro o los títulos de un periódico.
+      </p>
+
+      <dl>
+        <dt><strong>Propósito Semántico:</strong></dt>
+        <dd>Indican a los navegadores, lectores de pantalla (accesibilidad) y motores de búsqueda (SEO) cómo está
+          estructurada la información de la página.</dd>
+
+        <dt><strong>Niveles de Jerarquía:</strong></dt>
+        <dd><code>&lt;h1&gt;</code> representa el título de mayor importancia (se recomienda usar solo uno por página),
+          mientras que <code>&lt;h6&gt;</code> es el nivel más bajo de subsección.</dd>
+
+        <dt><strong>Regla de oro de Clean Code:</strong></dt>
+        <dd>No uses las etiquetas <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code> para cambiar el tamaño del texto.
+          Úsalas estrictamente para definir la estructura lógica. El tamaño visual se debe gestionar siempre mediante
+          CSS.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+    <!-- DEMOSTRACIÓN PRÁCTICA DE LOS NIVELES -->
+    <section>
+      <h2>Demostración visual de los 6 niveles</h2>
+      <pre><code>
+        <p>&lt;!-- Esto es un comentario en HTML --&gt;</p>
+
+        <h1>&lt;h1&gt;Este es un título de Nivel 1 (Principal)&lt;/h1&gt;</h1>
+        <h2>&lt;h2&gt;Este es un título de Nivel 2 (Sección)&lt;/h2&gt;</h2>
+        <h3>&lt;h3&gt;Este es un título de Nivel 3 (Subsección)&lt;/h3&gt;</h3>
+        <h4>&lt;h4&gt;Este es un título de Nivel 4 (Sub-subsección)&lt;/h4&gt;</h4>
+        <h5>&lt;h5&gt;Este es un título de Nivel 5 (Detalle secundario)&lt;/h5&gt;</h5>
+        <h6>&lt;h6&gt;Este es un título de Nivel 6 (Nivel más bajo de jerarquía)&lt;/h6&gt;</h6>
+      </code></pre>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    <!-- Logo de Solvam en el footer con enlace seguro -->
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>
