@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="../../../../Images/Solvam.png" type="image/x-icon">
-  <title>Introducción a HTML y Clean Code - Ejercicios HTML</title>
+  <link rel="icon" href="../../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Introducción y clean code</title>
 </head>
 
 <body>
 
   <header>
     <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
-    <h1>Hello HTML!</h1>
+    <span class="site-title">Hello HTML!</span>
   </header>
   <main>
-    <!-- 0. INTRODUCCION -->
-    <section id="introduction">
+    <!-- INTRODUCCION -->
+    <section id="intro">
       <h1>Introducción a HTML, Convenciones y Clean Code</h1>
       <p>
         Guía fundamental sobre la naturaleza de HTML, principios de desarrollo limpio, estándares de formateo y
@@ -25,7 +25,7 @@
     </section>
     <hr>
 
-    <!-- 1. QUE ES HTML5 -->
+    <!-- QUE ES HTML5 -->
     <section id="description">
       <h2>1. Contexto y Naturaleza de HTML</h2>
       <p>
@@ -51,7 +51,7 @@
 
     <hr>
 
-    <!-- 2. CONVENCIONES Y NOMENCLATURA -->
+    <!-- CONVENCIONES Y NOMENCLATURA -->
     <section id="conventions">
       <h2>2. Convenciones de Nomenclatura y Archivos</h2>
       <p>
@@ -83,7 +83,28 @@
       </ul>
     </section>
 
-    <aside>
+    <!-- ARQUITECTURA DE CARPETAS (SCAFFOLDING) -->
+    <section id="folder">
+      <h3>3. Arquitectura de Carpetas (Scaffolding)</h3>
+      <p>
+        En la industria profesional, el orden de los archivos es el primer paso del Clean Code. Nunca se guardan
+        decenas de archivos sueltos en el directorio principal, ya que dificulta la escalabilidad y el
+        mantenimiento del proyecto.
+      </p>
+      <ul>
+        <li><strong>La raíz (Root):</strong> El directorio principal del proyecto debe contener obligatoriamente
+          el archivo <code>index.html</code>. Cuando subas tu web a un servidor real, este buscará
+          automáticamente ese archivo exacto para arrancar la página principal.</li>
+        <li><strong>Carpetas organizativas:</strong> El resto de documentos HTML secundarios deben agruparse en
+          subcarpetas lógicas, comúnmente llamadas <code>/pages</code> o <code>/views</code>.</li>
+        <li><strong>Recursos estáticos (Assets):</strong> Las imágenes, iconos y, más adelante, los archivos de
+          diseño (CSS) y lógica (JS), se guardan separados en una carpeta genérica llamada
+          <code>/assets</code>.
+        </li>
+      </ul>
+    </section>
+
+    <aside id="folder-tree">
       <h3>Demostración visual de un árbol de carpetas</h3>
       <pre><code>
 /tu-proyecto-html
@@ -100,9 +121,9 @@
     </aside>
     <hr>
 
-    <!-- 3. FORMATO, TABULACIÓN E INDENTACIÓN -->
+    <!-- FORMATO, TABULACIÓN E INDENTACIÓN -->
     <section id="tab">
-      <h2>3. Tabulaciones, Indentación y Estructura Visual</h2>
+      <h2>4. Tabulaciones, Indentación y Estructura Visual</h2>
       <p>
         El código limpio facilita la lectura y el mantenimiento en entornos colaborativos:
       </p>
@@ -123,31 +144,9 @@
       </ul>
     </section>
 
-    <!-- ARQUITECTURA DE CARPETAS (SCAFFOLDING) -->
-    <section id="folder">
-      <h3>Arquitectura de Carpetas (Scaffolding)</h3>
-      <p>
-        En la industria profesional, el orden de los archivos es el primer paso del Clean Code. Nunca se guardan
-        decenas de archivos sueltos en el directorio principal, ya que dificulta la escalabilidad y el
-        mantenimiento del proyecto.
-      </p>
-      <ul>
-        <li><strong>La raíz (Root):</strong> El directorio principal del proyecto debe contener obligatoriamente
-          el archivo <code>index.html</code>. Cuando subas tu web a un servidor real, este buscará
-          automáticamente ese archivo exacto para arrancar la página principal.</li>
-        <li><strong>Carpetas organizativas:</strong> El resto de documentos HTML secundarios deben agruparse en
-          subcarpetas lógicas, comúnmente llamadas <code>/pages</code> o <code>/views</code>.</li>
-        <li><strong>Recursos estáticos (Assets):</strong> Las imágenes, iconos y, más adelante, los archivos de
-          diseño (CSS) y lógica (JS), se guardan separados en una carpeta genérica llamada
-          <code>/assets</code>.
-        </li>
-      </ul>
-    </section>
-    <hr>
-
-    <!-- 4 PRINCIPIOS DE CLEAN CODE -->
+    <!-- PRINCIPIOS DE CLEAN CODE -->
     <section id="cleancode">
-      <h2>4. Separación de responsabilidades <em>Semántica y estilos</em></h2>
+      <h2>5. Separación de responsabilidades <em>Semántica y estilos</em></h2>
       <ul>
         <li>
           <strong>Separación de Responsabilidades:</strong> HTML define <em>estructura y contenido</em>;
@@ -203,7 +202,7 @@
 
     <hr>
 
-    <!-- 5. EL DOM -->
+    <!-- DOM -->
     <section id="dom">
       <h2>5. El DOM (Document Object Model)</h2>
       <p>
@@ -230,7 +229,7 @@
 
     <hr>
 
-    <!-- 6. ACCESIBILIDAD WEB -->
+    <!-- ACCESIBILIDAD WEB -->
     <section id="Accessibility">
       <h2>6. Accesibilidad Web (a11y) Básica</h2>
       <p>
