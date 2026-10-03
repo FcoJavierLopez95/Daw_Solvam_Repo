@@ -70,7 +70,42 @@ else:
 # promedio.
 # ------------------------------------------------------------------------------
 
+note = ""
+note_list =[]
+aproved = ""
+i=1
 
+""" Verifico que el dato es un numeo """
+while i < 4:
+    try:
+        note= input(f"Dime tu calificación número {i}: ")
+
+        if (float(note) > 10):
+            print("No puedes sacar mas de un 10")
+
+        elif (float(note) < 0):
+            print("Por muy burro que seas no has podido sacar menos de un 0")
+
+        else:
+            note_list.append(float(note))
+            i += 1         
+        
+    except ValueError:
+        print ("Has introducido un dato incorrecto, empecemos de nuevo.")
+
+""" calculo la media """
+
+med =(sum(note_list) / 3)
+
+""" aprobado on suspendido """
+
+if med < 5.00:
+    aproved = "suspendido"
+else:
+    aproved = "Aprobado"
+
+
+print(f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} ")
 
 
 # ------------------------------------------------------------------------------
@@ -80,9 +115,38 @@ else:
 # incrementa en un 50% para las horas extras. Calcular el salario del trabajador
 # dadas las horas trabajadas y las tarifas.
 # ------------------------------------------------------------------------------
+work_time = "" 
+ord_time = 0
+extra_time = 0
+hour_price = ""
+salary = 0
 
+""" Verifico horas exactas y que introduce números """
 
+while True:
+    try:
+        work_time = float (input ("Introduce tus horas trabajadas, recuerda que no pagamos horas incompletas por lo que solo puedes introducir un numero entero: "))
+        if work_time % 1 != 0:
+            print("El numero introducido no es un numero entero.")
+            work_time = ""
+        else:
+            hour_price = float( input("Introduce el precio de la hora trabajada: "))
+            break
+    except ValueError:
+        print ("Has introducido un valor no válido, por favor inténtalo de nuevo")
 
+""" Calculo cuantas horas son extras """
+if work_time > 40:
+    extra_time = work_time - 40
+    ord_time = 40
+else:
+    ord_time = work_time
+    extra_time = 0
+
+""" Calculo el salario """
+salary = (ord_time*hour_price) + (extra_time * (hour_price*1.5))
+
+print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€")
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 6
