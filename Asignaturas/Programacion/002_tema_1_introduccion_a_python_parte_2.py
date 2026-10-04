@@ -4,19 +4,19 @@
 # positivo, negativo o cero.
 # ------------------------------------------------------------------------------
 while True:
-    
+
     try:
-        number = float(input("Introduce un número cualquiera positivo o negativo :")) 
-        break           
+        number = float(input("Introduce un número cualquiera positivo o negativo :"))
+        break
     except ValueError:
-        print("Has introducido un dato no válido, porfavor intentalo de nuevo")     
+        print("Has introducido un dato no válido, porfavor intentalo de nuevo")
 
 match number:
 
-    case number if number>0:
+    case number if number > 0:
         print("el número es positivo")
 
-    case number if number<0:
+    case number if number < 0:
         print("el número es negativo")
 
     case _:
@@ -28,12 +28,22 @@ match number:
 # Algoritmo que lea dos números y nos diga cuál de ellos es mayor o bien si son
 # iguales.
 # ------------------------------------------------------------------------------
-""" while True:
-    print(input("introduce dos valores:"))
-    for i in range (2):
-        num_[i] =  """
-    
+while True:
+    try:
+        number1 = float(input(f"Dime un numero "))
+        number2 = float(input(f"Dime otro numero "))
+        break
+    except ValueError:
+        print("Has introducido un dato incorrecto.")
 
+if number1 < number2:
+    print(f"El número mayor es {number2}")
+
+elif number1 > number2:
+    print(f"El número mayor es {number1}")
+
+else:
+    print(f"Los numeros {number1} y {number2} son iguales")
 
 
 # ------------------------------------------------------------------------------
@@ -44,22 +54,20 @@ match number:
 # ------------------------------------------------------------------------------
 
 
-while True:    
+while True:
     try:
-        number = int(input("Introduce un número entero cualquiera: ")) 
-        break           
+        number = int(input("Introduce un número entero cualquiera: "))
+        break
     except ValueError:
-        print("Has introducido un dato no válido, porfavor intentalo de nuevo.")  
+        print("Has introducido un dato no válido, porfavor intentalo de nuevo.")
 
 
-if number==0:
+if number == 0:
     print("El número es 0")
-elif (number%2) == 0:
+elif (number % 2) == 0:
     print(f"El número{number} es par")
 else:
     print(f"El número{number} es impar")
- 
-
 
 
 # ------------------------------------------------------------------------------
@@ -71,31 +79,31 @@ else:
 # ------------------------------------------------------------------------------
 
 note = ""
-note_list =[]
+note_list = []
 aproved = ""
-i=1
+i = 1
 
 """ Verifico que el dato es un numeo """
 while i < 4:
     try:
-        note= input(f"Dime tu calificación número {i}: ")
+        note = input(f"Dime tu calificación número {i}: ")
 
-        if (float(note) > 10):
+        if float(note) > 10:
             print("No puedes sacar mas de un 10")
 
-        elif (float(note) < 0):
+        elif float(note) < 0:
             print("Por muy burro que seas no has podido sacar menos de un 0")
 
         else:
             note_list.append(float(note))
-            i += 1         
-        
+            i += 1
+
     except ValueError:
-        print ("Has introducido un dato incorrecto, empecemos de nuevo.")
+        print("Has introducido un dato incorrecto, empecemos de nuevo.")
 
 """ calculo la media """
 
-med =(sum(note_list) / 3)
+med = sum(note_list) / 3
 
 """ aprobado on suspendido """
 
@@ -105,7 +113,9 @@ else:
     aproved = "Aprobado"
 
 
-print(f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} ")
+print(
+    f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} "
+)
 
 
 # ------------------------------------------------------------------------------
@@ -115,7 +125,7 @@ print(f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media 
 # incrementa en un 50% para las horas extras. Calcular el salario del trabajador
 # dadas las horas trabajadas y las tarifas.
 # ------------------------------------------------------------------------------
-work_time = "" 
+work_time = ""
 ord_time = 0
 extra_time = 0
 hour_price = ""
@@ -125,15 +135,19 @@ salary = 0
 
 while True:
     try:
-        work_time = float (input ("Introduce tus horas trabajadas, recuerda que no pagamos horas incompletas por lo que solo puedes introducir un numero entero: "))
+        work_time = float(
+            input(
+                "Introduce tus horas trabajadas, recuerda que no pagamos horas incompletas por lo que solo puedes introducir un numero entero: "
+            )
+        )
         if work_time % 1 != 0:
             print("El numero introducido no es un numero entero.")
             work_time = ""
         else:
-            hour_price = float( input("Introduce el precio de la hora trabajada: "))
+            hour_price = float(input("Introduce el precio de la hora trabajada: "))
             break
     except ValueError:
-        print ("Has introducido un valor no válido, por favor inténtalo de nuevo")
+        print("Has introducido un valor no válido, por favor inténtalo de nuevo")
 
 """ Calculo cuantas horas son extras """
 if work_time > 40:
@@ -144,17 +158,62 @@ else:
     extra_time = 0
 
 """ Calculo el salario """
-salary = (ord_time*hour_price) + (extra_time * (hour_price*1.5))
+salary = (ord_time * hour_price) + (extra_time * (hour_price * 1.5))
 
-print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€")
+print(
+    f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€"
+)
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 6
 # Algoritmo que lea tres números distintos y nos diga cuál de ellos es el mayor.
 # ------------------------------------------------------------------------------
 
+""" Declaración de variables """
 
+num = ""
+num_list = []
+i = 1
 
+""" Verifico que los datos son numeros """
+
+print("Dime tres números distintos")
+
+while i < 4:
+    try:
+        num = float(input(f"Dime el número {i}: "))
+
+        if num in num_list:  # Verifico que los tres numeros son diferentes
+            print("No puedes repetir el mismo número")
+            continue
+        else:
+            num_list.append(num)
+            i += 1
+    except ValueError:
+        print("Has introducido un dato incorrecto.")
+
+" Recorro y ordeno la lista "
+
+length = len(num_list)
+for j in range(length):
+    for k in range(0, (length - 1) - j):
+        if num_list[k] < num_list[k + 1]:
+            num_list[k], num_list[k + 1] = num_list[k + 1], num_list[k]
+
+""" conclusion """
+
+print(
+    f"El número mayor es: {num_list[0]}\nQuedando ordenados de mayor a menor de esta forma: {num_list}"
+)
+
+""" 
+### También puedo hacerlo con funciones nativas de python: ###
+
+# lista.sort(num_list) --> Modifica (ordena) la lista original directamente en memoria.
+# lista_ordenada = sorted(num_list) --> Deja la lista original tal cual y te devuelve una nueva lista ya ordenada.
+# numero_mayor = max(num_list)  --> Asigna el número mas grande
+
+"""
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 7
@@ -178,22 +237,16 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 9
 # Mostrar los múltiplos de 3 desde 1 hasta el numero n, ingresado por teclado.
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 10
 # Imprimir de forma descendente los 30 primeros números naturales menores de 30
 # ------------------------------------------------------------------------------
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -203,15 +256,11 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 12
 # Se pide representar el algoritmo que nos calcule la suma de los N primeros
 # números naturales. N se leerá por teclado
 # ------------------------------------------------------------------------------
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -222,8 +271,6 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 14
 # Realizar un algoritmo que permita calcular la suma de los números ingresados
@@ -232,15 +279,11 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 15
 # Ingresar por teclado 10 números enteros, se debe mostrar la suma de dichos
 # números, calcular cuántos es la suma de los pares y el de los impares.
 # ------------------------------------------------------------------------------
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -252,15 +295,11 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 17
 # Algoritmo que lea números enteros hasta teclear 0, y nos muestre el máximo, el
 # mínimo y la media de todos ellos.
 # ------------------------------------------------------------------------------
-
-
 
 
 # ------------------------------------------------------------------------------
@@ -273,8 +312,6 @@ print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has
 # estar entre 0 y 10, si no lo están, no imprimirá las notas, mostrará un mensaje de
 # error y volverá a pedir otro alumno.
 # ------------------------------------------------------------------------------
-
-
 
 
 # ------------------------------------------------------------------------------
