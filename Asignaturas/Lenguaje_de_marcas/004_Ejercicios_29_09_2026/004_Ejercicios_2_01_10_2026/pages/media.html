@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Estructuras de Datos, Tablas y Multimedia - Ejercicios HTML</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Estructuras de Datos, Tablas y Multimedia - Ejercicios HTML</title>
+</head>
+
+<body>
+
+<!-- 8. MULTIMEDIA Y RENDIMIENTO -->
+    <section id="multimedia-intro">
+      <h1>8. Multimedia y Rendimiento</h1>
+      <p>
+        La incorporación de elementos multimedia enriquece la web, pero exige un control riguroso de la accesibilidad, la seguridad y la optimización de los recursos mediante atributos clave.
+      </p>
+    </section>
+
+    <hr>
+
+    <!-- IMÁGENES Y ATRIBUTO ALT -->
+    <section id="imagenes-alt">
+      <h2>8.1 Imágenes y atributo obligatorio alt</h2>
+
+      <article id="etiquetas-img">
+        <h3>Buenas prácticas de usabilidad y accesibilidad</h3>
+        <p>
+          Las imágenes se incrustan con elementos optimizados para rendimiento y lectura asistida:
+        </p>
+        <ul>
+          <li><strong>Atributo <code>alt</code> (Usabilidad y Accesibilidad):</strong> Obligatorio por normativa. Describe visualmente la imagen para lectores de pantalla de personas ciegas o cuando el archivo no puede cargarse.</li>
+          <li><strong>Atributos <code>width</code> y <code>height</code> (Rendimiento):</strong> Reservan el espacio exacto en pantalla antes de que cargue la imagen, evitando saltos molestos de diseño (CLS - Cumulative Layout Shift).</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código de imagen optimizada</h3>
+        <pre><code>
+&lt;img src="../../../../Images/html5.png" width="80" height="80" alt="Logo oficial de HTML5"&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- RENDIMIENTO WEB: LOADING LAZY -->
+    <section id="rendimiento-lazy">
+      <h2>8.2 Rendimiento web (Carga diferida)</h2>
+
+      <article id="etiquetas-lazy">
+        <h3>Optimización de velocidad de carga</h3>
+        <p>
+          Atributo esencial de rendimiento para evitar descargar todo el contenido multimedia de golpe:
+        </p>
+        <ul>
+          <li><strong>Atributo <code>loading="lazy"</code> (Rendimiento):</strong> Pospone la carga de la imagen o iframe hasta que el usuario hace scroll y está cerca del área visible (viewport), ahorrando datos y acelerando la carga inicial de la web.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código de carga diferida</h3>
+        <pre><code>
+&lt;img src="imagen-grande.jpg" width="600" height="400" loading="lazy" alt="Paisaje de montaña"&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- IMÁGENES RESPONSIVE: PICTURE Y SRCSET -->
+    <section id="imagenes-responsive">
+      <h2>8.3 Imágenes responsive (&lt;picture&gt; y srcset)</h2>
+
+      <article id="etiquetas-responsive">
+        <h3>Adaptabilidad y optimización de ancho de banda</h3>
+        <p>
+          Permiten servir la versión óptima de una imagen según el dispositivo:
+        </p>
+        <ul>
+          <li><strong><code>&lt;picture&gt;</code> y <code>&lt;source media="..."&gt;</code> (Buenas prácticas):</strong> Cambian radicalmente el archivo de imagen según el tamaño de pantalla (ej. formato vertical en móviles y apaisado en escritorios), optimizando el rendimiento.</li>
+          <li><strong>Atributo <code>srcset</code> (Rendimiento):</strong> Ofrece múltiples resoluciones del mismo archivo para pantallas de alta densidad (pantallas Retina), permitiendo que el navegador elija la más adecuada.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código responsive con picture</h3>
+        <pre><code>
+&lt;picture&gt;
+  &lt;source media="(max-width: 768px)" srcset="imagen-movil.jpg"&gt;
+  &lt;source media="(min-width: 769px)" srcset="imagen-desktop.jpg"&gt;
+  &lt;img src="imagen-default.jpg" alt="Ejemplo de imagen adaptable"&gt;
+&lt;/picture&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- AUDIO Y VÍDEO NATIVO -->
+    <section id="audio-video">
+      <h2>8.4 Audio y vídeo nativo</h2>
+
+      <article id="etiquetas-multimedia">
+        <h3>Control de reproducción y usabilidad</h3>
+        <p>
+          Elementos multimedia integrados mediante atributos de control estrictos:
+        </p>
+        <ul>
+          <li><strong>Atributo <code>controls</code> (Usabilidad):</strong> Muestra obligatoriamente los botones interactivos de reproducción, pausa, barra de progreso y volumen para que el usuario controle el contenido.</li>
+          <li><strong>Atributo <code>autoplay</code> y <code>muted</code> (Buenas prácticas):</strong> El autoplay con sonido está bloqueado por los navegadores modernos por mala experiencia de usuario. Si se usa, debe ir acompañado obligatoriamente de <code>muted</code>.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código de vídeo nativo</h3>
+        <pre><code>
+&lt;video controls width="300"&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  Tu navegador no soporta vídeo HTML5.
+&lt;/video&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- AGRUPACIÓN VISUAL: FIGURE Y FIGCAPTION -->
+    <section id="figure-figcaption">
+      <h2>8.5 Agrupación visual (&lt;figure&gt; y &lt;figcaption&gt;)</h2>
+
+      <article id="etiquetas-figure">
+        <h3>Asociación semántica y accesibilidad</h3>
+        <p>
+          Estructura semántica para elementos ilustrativos:
+        </p>
+        <ul>
+          <li><strong><code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code> (Semántica):</strong> Agocian lógicamente una imagen, gráfico o diagrama con su leyenda explicativa, facilitando que los lectores de pantalla vinculen la descripción directamente al recurso visual.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código de figure y figcaption</h3>
+        <pre><code>
+&lt;figure&gt;
+  &lt;img src="../../../../Images/html5.png" width="60" alt="HTML5"&gt;
+  &lt;figcaption&gt;Figura 1: Logotipo oficial de HTML5.&lt;/figcaption&gt;
+&lt;/figure&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- CONTENIDO INCRUSTADO E IFRAME -->
+    <section id="contenido-iframe">
+      <h2>8.6 Contenido incrustado (&lt;iframe&gt;) y seguridad</h2>
+
+      <article id="etiquetas-iframe">
+        <h3>Seguridad crítica y rendimiento en contenidos externos</h3>
+        <p>
+          Los iframes cargan páginas o servicios de terceros ajenos a tu control, exigiendo estrictas medidas defensivas:
+        </p>
+        <ul>
+          <li><strong>Atributo <code>title</code> (Accesibilidad):</strong> Obligatorio. Permite a los lectores de pantalla anunciar qué tipo de contenido externo hay dentro del marco flotante.</li>
+          <li><strong>Atributo <code>sandbox</code> (Seguridad Crítica):</strong> Restringe drásticamente los permisos del iframe (bloquea ejecución de scripts maliciosos, formularios, pop-ups u origen de datos cruzados no deseados).</li>
+          <li><strong>Atributo <code>allow</code> (Seguridad y Buenas Prácticas):</strong> Concede de forma explícita y limitada únicamente los permisos estrictamente necesarios (ej. <code>allow="fullscreen"</code> o acelerómetro), denegando el resto por defecto.</li>
+          <li><strong>Atributo <code>loading="lazy"</code> (Rendimiento):</strong> Impide que iframes pesados (como mapas interactivos) bloqueen la carga inicial del sitio web.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Código de iframe seguro</h3>
+        <pre><code>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ejemplo" title="Vídeo tutorial de HTML" loading="lazy" sandbox="allow-scripts allow-same-origin allow-presentation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+  <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>

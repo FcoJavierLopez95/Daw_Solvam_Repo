@@ -1,0 +1,46 @@
+/*
+ Esto es un comentario
+  en varias líneas
+ */
+
+ h1{
+    color: rgb(229, 124, 255);
+    text-decoration: underlñine;
+    background-color: rgb(29, 24, 34);
+    font-family: "Gill Sans", "Sans MT",calibri;
+ }
+
+
+ p{ 
+    color: pink  !important;    /* Si hay conflicto tiene toda la preferencia  */
+    font-size: 20px;
+    line-height: 1;
+    background-color: rgb(194, 195, 255);
+    color: rgb(21, 3, 56);
+    font-family: Georgia;
+    font-size: 1.4em;
+    text-align: center;
+ }
+
+ #titulo2 {           /*  Aqui aplicamos estilo solo a este id */
+color: blue;        /* Solo puede haber un mismo id */
+ }
+
+ #lorem{             /*  Aqui aplicamos estilo solo a esta clase */
+color: pink        /* Pueden haber varios elementos con la misma clase*/
+    
+ }
+
+ /* 
+ Orden de preferencia:
+  1. !important
+  2. Inline ###> Mala práctica 
+  3. ID
+  4. Class
+  5. Etiqueta/Selector 
+  */
+
+/* margin padding, border,  width, height, display */
+
+/* margin:30px Espacio que hay por fuera que creo al rededor de un elemento */
+/* padding: 30px  Espacio que hay por dentro fr un elementop Relleno */

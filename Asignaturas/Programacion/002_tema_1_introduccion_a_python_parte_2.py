@@ -113,9 +113,7 @@ else:
     aproved = "Aprobado"
 
 
-print(
-    f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} "
-)
+print(f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} ")
 
 
 # ------------------------------------------------------------------------------
@@ -160,9 +158,7 @@ else:
 """ Calculo el salario """
 salary = (ord_time * hour_price) + (extra_time * (hour_price * 1.5))
 
-print(
-    f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€"
-)
+print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€")
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 6
@@ -202,7 +198,9 @@ for j in range(length):
 
 """ conclusion """
 
-print(f"El número mayor es: {num_list[0]}\nQuedando ordenados de mayor a menor de esta forma: {num_list}")
+print(
+    f"El número mayor es: {num_list[0]}\nQuedando ordenados de mayor a menor de esta forma: {num_list}"
+)
 
 """ 
 ### También puedo hacerlo con funciones nativas de python: ###
@@ -224,36 +222,36 @@ print(f"El número mayor es: {num_list[0]}\nQuedando ordenados de mayor a menor 
 # • de 9 a 10 Sobresaliente
 # ------------------------------------------------------------------------------
 
-cal =""
-alpha_cal= ""
+cal = ""
+alpha_cal = ""
 
 while True:
     try:
-        cal= float(input("Introduce tu nota: "))
+        cal = float(input("Introduce tu nota: "))
 
         match cal:
             case cal if cal < 0:
                 print("Por muy burro que seas no puedes sacar menos de un 0, por favor intentalo de nuevo")
                 continue
 
-            case cal if cal >= 0  and cal <3:
-                alpha_cal="Muy deficiente"
+            case cal if cal >= 0 and cal < 3:
+                alpha_cal = "Muy deficiente"
                 break
 
-            case cal if cal >= 3  and cal <5:
-                alpha_cal="Insuficiente"
+            case cal if cal >= 3 and cal < 5:
+                alpha_cal = "Insuficiente"
                 break
 
-            case cal if cal >= 5  and cal <9:
-                alpha_cal="Aprobado"
+            case cal if cal >= 5 and cal < 6:
+                alpha_cal = "Aprobado"
                 break
 
-            case cal if cal >= 9  and cal <10:
-                alpha_cal="Notable"
+            case cal if cal >= 6 and cal < 9:
+                alpha_cal = "Notable"
                 break
 
-            case cal if cal >= 9  and cal ==10:
-                alpha_cal="Excelente"
+            case cal if cal >= 9 and cal == 10:
+                alpha_cal = "Excelente"
                 break
 
             case cal if cal > 10:
@@ -266,8 +264,6 @@ while True:
 print(f"Con una nota de {cal} tu estado es: {alpha_cal} ")
 
 
-
-
 # ------------------------------------------------------------------------------
 # EJERCICIO 8
 # Crear un programa que permita ingresar un nombre y una cantidad numérica
@@ -275,30 +271,30 @@ print(f"Con una nota de {cal} tu estado es: {alpha_cal} ")
 # cantidad ingresada.
 # ------------------------------------------------------------------------------
 
-name= ""
+name = ""
 repeat = ""
 
-name= input("introduce tu nombre: ")
+name = input("introduce tu nombre: ")
 
 while True:
     try:
-        repeat= float(input("Cuantas veces quieres que diga tu nombre?: "))
-        if repeat % 1 !=0:
+        repeat = float(input("Cuantas veces quieres que diga tu nombre?: "))
+        if repeat % 1 != 0:
             print("Necesito que el numero sea entero")
             continue
-        elif repeat <0:
+        elif repeat < 0:
             print("No puedo desrepetir tu nombre, introduce un numero positivo")
             continue
-        elif repeat ==0:
+        elif repeat == 0:
             print("Seguro? así no puedo decirlo. introduce uno que no sea 0")
             continue
         else:
-            repeat=int(repeat)
+            repeat = int(repeat)
             break
     except ValueError:
         print("El valor introducido no es válido, por favor intentalo de nuevo.")
 
-for i in range (repeat):
+for i in range(repeat):
     print(name)
 
 # ------------------------------------------------------------------------------
@@ -307,10 +303,38 @@ for i in range (repeat):
 # ------------------------------------------------------------------------------
 
 
+while True:
+    try:
+        mult3 = float(input("Cuantos multiplos de 3 quieres que diga?: "))
+        if mult3 % 1 != 0:
+            print("Necesito que el numero sea entero")
+            continue
+        elif mult3 < 0:
+            print("El número tiene que ser positivo")
+            continue
+        elif mult3 == 0:
+            print("introduce uno que no sea 0")
+            continue
+        else:
+            mult3 = int(mult3)
+            break
+    except ValueError:
+        print("El valor introducido no es válido, por favor intentalo de nuevo.")
+
+triple=1
+
+for i in range(mult3):
+    triple= triple*3
+    print(triple)
+
+
 # ------------------------------------------------------------------------------
 # EJERCICIO 10
 # Imprimir de forma descendente los 30 primeros números naturales menores de 30
 # ------------------------------------------------------------------------------
+
+for i in range(30, 0, -1):
+    print(i)
 
 
 # ------------------------------------------------------------------------------

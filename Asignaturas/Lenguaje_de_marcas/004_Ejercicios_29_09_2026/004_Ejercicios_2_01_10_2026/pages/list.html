@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../../../Images/Solvam.png" type="image/x-icon">
+    <title>Estructuras de Datos Simples - Ejercicios HTML</title>
+</head>
+
+<body>
+
+    <header>
+        <!-- Imagen de HTML5 en el header -->
+        <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo de HTML5">
+        <span class="site-title">Hello HTML!</span>
+    </header>
+
+    <hr>
+
+    <main>
+       
+        <section id="listas-intro">
+            <h1>6. Listas</h1>
+            <p>
+                HTML proporciona distintos tipos de listas para agrupar elementos según la relación semántica que exista
+                entre ellos.
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- LISTAS DESORDENADAS -->
+        <section id="ul">
+            <h2>6.1 Listas desordenadas</h2>
+
+            <article id="etiquetas-ul">
+                <h3>Elementos sin un orden estricto</h3>
+                <p>
+                    Se utilizan cuando el orden de los elementos no altera el significado del contenido (ej. listas de
+                    la compra o menús de navegación).
+                </p>
+                <ul>
+                    <li><strong><code>&lt;ul&gt;</code>:</strong> Para crear la lista desordenada (Unordered List).</li>
+                    <li><strong><code>&lt;li&gt;</code>:</strong> Para cada elemento de la lista (List Item).</li>
+                </ul>
+            </article>
+
+            <aside>
+                <h3>Demostración visual de listas desordenadas</h3>
+                <pre><code>
+&lt;ul&gt;
+<ul>
+  <li>&lt;li&gt;Primer elemento&lt;/li&gt;</li>
+  <li>&lt;li&gt;Segundo elemento&lt;/li&gt;</li>
+</ul>
+&lt;/ul&gt;
+        </code></pre>
+            </aside>
+        </section>
+
+        <hr>
+
+        <!-- LISTAS ORDENADAS -->
+        <section id="ol">
+            <h2>6.2 Listas ordenadas</h2>
+
+            <article id="etiquetas-ol">
+                <h3>Secuencias e instrucciones</h3>
+                <p>
+                    Se utilizan cuando la secuencia o la jerarquía de los elementos es imprescindible (ej. pasos de una
+                    receta o un ranking).
+                </p>
+                <ul>
+                    <li><strong><code>&lt;ol&gt;</code>:</strong> Para crear la lista numerada secuencialmente (Ordered
+                        List).</li>
+                    <li><strong><code>&lt;li&gt;</code>:</strong> Para representar cada paso de la secuencia.</li>
+                </ul>
+            </article>
+
+            <aside>
+                <h3>Demostración visual de listas ordenadas</h3>
+                <pre><code>
+&lt;ol&gt;
+<ol>
+  <li>&lt;li&gt;Primer paso&lt;/li&gt;</li>
+  <li>&lt;li&gt;Segundo paso&lt;/li&gt;</li>
+</ol>
+&lt;/ol&gt;
+        </code></pre>
+            </aside>
+        </section>
+
+        <hr>
+
+        <!-- LISTAS DE DESCRIPCIÓN -->
+        <section id="dl">
+            <h2>6.3 Listas de descripción</h2>
+
+            <article id="etiquetas-dl">
+                <h3>Diccionarios y glosarios</h3>
+                <p>
+                    Se utilizan para asociar conceptos o nombres con sus respectivas explicaciones o valores.
+                </p>
+                <ul>
+                    <li><strong><code>&lt;dl&gt;</code>:</strong> Contenedor padre de la lista (Description List).</li>
+                    <li><strong><code>&lt;dt&gt;</code>:</strong> El concepto o término a definir (Description Term).
+                    </li>
+                    <li><strong><code>&lt;dd&gt;</code>:</strong> La explicación o valor del término (Description
+                        Details).</li>
+                </ul>
+            </article>
+
+            <aside>
+                <h3>Demostración visual de listas de descripción</h3>
+                <pre><code>
+&lt;dl&gt;
+<dl>
+  <dt>&lt;dt&gt;HTML&lt;/dt&gt;</dt>
+  <dd>&lt;dd&gt;Lenguaje de marcado para la web&lt;/dd&gt;</dd>
+  <dt>&lt;dt&gt;CSS&lt;/dt&gt;</dt>
+  <dd>&lt;dd&gt;Lenguaje de hojas de estilo&lt;/dd&gt;</dd>
+</dl>
+&lt;/dl&gt;
+        </code></pre>
+            </aside>
+        </section>
+
+        <hr>
+
+        <!-- LISTAS ANIDADAS -->
+        <section id="anidadas">
+            <h2>6.4 Listas anidadas</h2>
+
+            <article id="etiquetas-anidadas">
+                <h3>Jerarquías complejas</h3>
+                <p>
+                    Ocurren cuando insertamos una lista completa dentro de un elemento <code>&lt;li&gt;</code> de otra
+                    lista superior para crear jerarquías o submenús.
+                </p>
+            </article>
+
+            <aside>
+                <h3>Demostración visual de listas anidadas</h3>
+                <pre><code>
+&lt;ul&gt;
+<ul>
+  <li>&lt;li&gt;Frontend
+    &lt;ul&gt;
+    <ul>
+      <li>&lt;li&gt;HTML5&lt;/li&gt;</li>
+      <li>&lt;li&gt;CSS3&lt;/li&gt;</li>
+    </ul>
+    &lt;/ul&gt;
+  &lt;/li&gt;</li>
+  <li>&lt;li&gt;Backend&lt;/li&gt;</li>
+</ul>
+&lt;/ul&gt;
+        </code></pre>
+            </aside>
+        </section>
+
+        <footer>
+            <!-- Imagen de Solvam en el footer con enlace seguro -->
+            <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+                <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+            </a>
+
+            <p>
+                &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+            </p>
+
+            <p>
+                <small>
+                    Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+                    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+                </small>
+            </p>
+
+            <a href="index.html">Vuelve al <strong>inicio</strong></a>
+        </footer>
+
+</body>
+
+</html>

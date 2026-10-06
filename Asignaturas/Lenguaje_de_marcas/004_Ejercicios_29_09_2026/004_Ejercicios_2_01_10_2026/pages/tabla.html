@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../../../../Images/Solvam.png" type="image/x-icon">
+  <title>Tablas y Estructuras Complejas - Ejercicios HTML</title>
+</head>
+
+<body>
+
+  <header>
+    <img src="../../../../../Images/html5.png" width="80" id="html5-logo" alt="Logo oficial de HTML5">
+    <span class="site-title">Hello HTML!</span>
+  </header>
+
+  <hr>
+
+  <main>
+
+    <section id="tablas-intro">
+      <h1>7. Tablas</h1>
+      <p>
+        Nota: Las tablas se separan de las listas porque su complejidad técnica y semántica es mayor. Sirven
+        exclusivamente para representar datos bidimensionales estructurados en filas y columnas.
+      </p>
+    </section>
+
+    <hr>
+
+
+    <section id="tabla-basica">
+      <h2>7.1 Estructura básica</h2>
+
+      <article id="etiquetas-tabla-basica">
+        <h3>Filas y celdas simples</h3>
+        <p>
+          Las tablas más simples se construyen definiendo filas y, dentro de ellas, celdas de datos regulares.
+        </p>
+        <ul>
+          <li><strong><code>&lt;table&gt;</code>:</strong> Contenedor principal de la tabla.</li>
+          <li><strong><code>&lt;tr&gt;</code>:</strong> (Table Row) Define una fila horizontal.</li>
+          <li><strong><code>&lt;td&gt;</code>:</strong> (Table Data) Define una celda de datos estándar dentro de una
+            fila.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Demostración visual de estructura básica</h3>
+        <pre><code>
+&lt;table border="1"&gt;
+  &lt;tr&gt;
+<table border="1">
+  <tr>
+    <td>&lt;td&gt;Fila 1, Celda 1&lt;/td&gt;</td>
+    <td>&lt;td&gt;Fila 1, Celda 2&lt;/td&gt;</td>
+  </tr>
+</table>
+  &lt;/tr&gt;
+&lt;/table&gt;
+        </code></pre>
+      </aside>
+    </section>
+
+    <hr>
+
+    <!-- ESTRUCTURA SEMÁNTICA-->
+    <section id="tabla-semantica">
+      <h2>7.2 Estructura semántica</h2>
+
+      <article id="etiquetas-tabla-semantica">
+        <h3>Accesibilidad y estructuración avanzada</h3>
+        <p>
+          Para cumplir con los estándares profesionales, las tablas deben dividirse lógicamente y utilizar encabezados
+          explícitos.
+        </p>
+        <ul>
+          <li><strong><code>&lt;caption&gt;</code>:</strong> Título o resumen de la tabla. Mejora enormemente la
+            accesibilidad.</li>
+          <li><strong><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>:</strong>
+            Cabecera, cuerpo principal y pie de la tabla.</li>
+          <li><strong><code>&lt;th&gt;</code>:</strong> (Table Header) Celda de cabecera. Utiliza el atributo
+            <code>scope="col"</code> (columna) o <code>scope="row"</code> (fila) para indicar a qué datos aplica.</li>
+        </ul>
+      </article>
+
+<aside>
+    <h3>Demostración visual semántica</h3>
+    <pre><code>&lt;table border="1"&gt;
+  &lt;caption&gt;Alumnos de DAW&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope="col"&gt;Nombre&lt;/th&gt;
+      &lt;th scope="col"&gt;Módulo&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Javier&lt;/td&gt;
+      &lt;td&gt;Entornos de Desarrollo&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+    <!-- Tabla real renderizada -->
+    <table border="1">
+      <caption>Alumnos de DAW</caption>
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Módulo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Javier</td>
+          <td>Entornos de Desarrollo</td>
+        </tr>
+      </tbody>
+    </table>
+</aside>
+    </section>
+
+    <hr>
+
+    <!-- ATAJOS DE VS CODE  -->
+    <section id="tabla-emmet">
+      <h2>7.4 Atajos de creación ( VS Code)</h2>
+
+      <article id="etiquetas-tabla-emmet">
+        <h3>Generación rápida de código</h3>
+        <p>
+          Visual Studio Code permite usar abreviaturas de Emmet para crear estructuras escribiendo una sola línea.
+        </p>
+        <ul>
+          <li><strong><code>&gt;</code></strong>: Anida un elemento dentro de otro (hijo).</li>
+          <li><strong><code>*</code></strong>: Multiplica el elemento por el número indicado.</li>
+        </ul>
+      </article>
+
+      <aside>
+        <h3>Ejemplo práctico: Tabla de 3x3</h3>
+        <p>Escribe esta línea y pulsa <kbd>Tab</kbd> o <kbd>Enter</kbd>:</p>
+
+        <pre><code>table&gt;tr*3&gt;td*3</code></pre>
+
+        <p>Resultado autogenerado:</p>
+
+        <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+      </aside>
+    </section>
+
+  </main>
+
+  <hr>
+
+  <footer>
+    <a href="https://solvam.es" target="_blank" rel="noopener noreferrer">
+      <img src="../../../../../Images/Solvam.png" width="120" id="Solvam" alt="Logo de Solvam">
+    </a>
+
+    <p>
+      &copy; Francisco Javier López Arce - Proyecto para practicar y aprender HTML.
+    </p>
+
+    <p>
+      <small>
+        Estudiante de <strong>DAW</strong> (Desarrollo de Aplicaciones Web) en
+        <a href="https://solvam.es" target="_blank" rel="noopener noreferrer"><strong>Solvam</strong></a>.
+      </small>
+    </p>
+
+    <a href="../index.html">Vuelve al <strong>inicio</strong></a>
+  </footer>
+
+</body>
+
+</html>
