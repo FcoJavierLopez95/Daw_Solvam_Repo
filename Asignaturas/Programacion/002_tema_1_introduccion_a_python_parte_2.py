@@ -416,3 +416,80 @@ for i in range(30, 0, -1):
 # diferente a 0 (cero). Si ingresa un número negativo o mayor que 5 deberá
 # informar “Opción no válida”.
 # ------------------------------------------------------------------------------
+def show_menu():
+    print
+    while True:
+        try:
+            menu = int(input("MENU CALCULADORA\n1.-Suma\n2.-Resta\n3.Producto\n4.-División\n5.-Salir\nSelecciona una opción: "))
+
+            match menu:
+                case 1:
+                    result ,char, num1, num2 = suma()
+                    show_result(result ,char, num1, num2)
+                    continue
+
+                case 2:
+                    result ,char, num1, num2 = resta()
+                    show_result(result ,char, num1, num2)
+                
+                case 3:
+                    result ,char, num1, num2 = prod()
+                    show_result(result ,char, num1, num2)
+                    continue
+
+                case 4:
+                    result ,char, num1, num2 = div()
+                    show_result(result ,char, num1, num2)
+                    continue 
+
+                case 5:
+                    print("Saliendo del programa...")
+                    break 
+
+                case _:
+                    print("El valor introducido no es válido, por favor inténtalo de nuevo")
+                    continue
+
+        except ValueError:
+                print("El valor introducido no es válido, por favor inténtalo de nuevo")
+
+
+def comprobar_num():
+    while True:
+        try:
+            num1 = float(input(f"Dime un numero "))
+            num2 = float(input(f"Dime otro numero "))
+            return num1, num2
+        except ValueError:
+            print("Has introducido un dato incorrecto.")
+
+
+def suma():
+    num1, num2 = comprobar_num()
+    result= num1 + num2
+    char= "+"
+    return result ,char, num1, num2
+
+def resta():
+    num1, num2 = comprobar_num()
+    result= num1 - num2
+    char= "-"
+    return result ,char, num1, num2
+
+def prod():
+    num1, num2 = comprobar_num()
+    result= num1 + num2
+    char= "x"
+    return result ,char, num1, num2 
+
+def div():
+    num1, num2 = comprobar_num()
+    result= num1 / num2
+    char= "÷"
+    return result ,char, num1, num2 
+
+def show_result( result, char, num1, num2):
+    print(f"{num1} {char} {num2} = {result}")
+
+
+show_menu()
