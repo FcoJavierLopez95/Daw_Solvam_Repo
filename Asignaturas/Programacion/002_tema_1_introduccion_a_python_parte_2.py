@@ -113,7 +113,9 @@ else:
     aproved = "Aprobado"
 
 
-print(f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} ")
+print(
+    f"Teniendo en cuenta tus calificaciones de: {note_list} te sale una media de {med:.2f} por lo que has {aproved} "
+)
 
 
 # ------------------------------------------------------------------------------
@@ -158,7 +160,9 @@ else:
 """ Calculo el salario """
 salary = (ord_time * hour_price) + (extra_time * (hour_price * 1.5))
 
-print(f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€")
+print(
+    f"Esta semana has trabajado un total de {ord_time} horas ordinarias y  has realizado un total de {extra_time} horas extra.\nSueldo a percibir: {salary}€"
+)
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 6
@@ -231,7 +235,9 @@ while True:
 
         match cal:
             case cal if cal < 0:
-                print("Por muy burro que seas no puedes sacar menos de un 0, por favor intentalo de nuevo")
+                print(
+                    "Por muy burro que seas no puedes sacar menos de un 0, por favor intentalo de nuevo"
+                )
                 continue
 
             case cal if cal >= 0 and cal < 3:
@@ -321,10 +327,10 @@ while True:
     except ValueError:
         print("El valor introducido no es válido, por favor intentalo de nuevo.")
 
-triple=1
+triple = 1
 
 for i in range(mult3):
-    triple= triple*3
+    triple = triple * 3
     print(triple)
 
 
@@ -343,12 +349,46 @@ for i in range(30, 0, -1):
 # 1 y 100.
 # ------------------------------------------------------------------------------
 
+for i in range(1, 100):
+    if i % 2 == 0:
+        print(f"{i} es múltiplo de 2")
+    elif i % 3 == 0:
+        print(f"{i} es múltiplo de 3")
+    else:
+        print(i)
+
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 12
 # Se pide representar el algoritmo que nos calcule la suma de los N primeros
 # números naturales. N se leerá por teclado
 # ------------------------------------------------------------------------------
+numtype = ""
+
+
+def introduce_num(numtype):
+    while True:
+        try:
+            n = int(input(f"Introduce un número {numtype} "))
+            if n <= 0:
+                print("El valor no puede ser igual o menor a 0")
+                continue
+            else:
+                return n
+        except ValueError:
+            print("Has introducido un dato no válido, porfavor intentalo de nuevo.")
+
+
+n = introduce_num("entero positivo")
+
+nat = 0
+
+for i in range(
+    nat,
+    n,
+):
+    nat = nat + i
+    print(f"{i} + {i-1} = {nat}")
 
 
 # ------------------------------------------------------------------------------
@@ -358,6 +398,30 @@ for i in range(30, 0, -1):
 # 6+8+10+12+14.
 # ------------------------------------------------------------------------------
 
+n = introduce_num("Entero positivo")
+
+par = n
+list_par = []
+
+if n % 2 == 0:
+    for par in range(
+        n,
+        n + n,
+    ):
+        list_par.append(n)
+        n += 2
+else:
+    par = +1
+    for par in range(
+        n,
+        n + n,
+    ):
+        list_par.append(n)
+        n += 2
+
+sum_list = sum(list_par)
+print(f"La suma de los numeros {list_par} es: {sum_list}")
+
 
 # ------------------------------------------------------------------------------
 # EJERCICIO 14
@@ -365,6 +429,25 @@ for i in range(30, 0, -1):
 # mientras que el valor acumulado no supere el valor 100. Mostrar el valor
 # acumulado antes de superar 100.
 # ------------------------------------------------------------------------------
+list_100 = []
+res = 0
+while res < 100:
+    n = introduce_num("Del 1 al 50: ")
+    if n > 50:
+        print("El número es muy grande.")
+        continue
+    else:
+        if sum(list_100) + n > 100:
+            print(f"Numeros introducidos: {list_100} Te has pasado.")
+            print(f"valor acumulado 100, te pasas por {(100-sum(list_100))-n}!!!\n")
+            break
+        elif sum(list_100) + n == 100:
+            print(f"Numeros introducidos: {list_100}")
+            print("Has llegado exactamente a 100!!!\n")
+            break
+        else:
+            list_100.append(n)
+            print(f"Valores introducidos: {list_100}\n")
 
 
 # ------------------------------------------------------------------------------
@@ -372,6 +455,25 @@ for i in range(30, 0, -1):
 # Ingresar por teclado 10 números enteros, se debe mostrar la suma de dichos
 # números, calcular cuántos es la suma de los pares y el de los impares.
 # ------------------------------------------------------------------------------
+list_total = []
+list_par = []
+list_impar = []
+
+for i in range(0, 10):
+    n = introduce_num(f"enteroeste es el numero {i+1}: ")
+
+    if n % 2:
+        list_par.append(n)
+        list_total.append(n)
+        print((f"Numeros introducidos: {list_total}\n"))
+    else:
+        list_impar.append(n)
+        list_total.append(n)
+        print((f"Numeros introducidos: {list_total}\n"))
+
+print(
+    f"Numeros introducidos: {list_total}\nSuma total:{sum(list_total)}\nNumeros pares introducidos: {list_par} Suma de dichos numeros: {sum(list_par)}\nNumeros impares introducidos: {list_impar} Suma de dichos numeros: {sum(list_impar)}\n"
+)
 
 
 # ------------------------------------------------------------------------------
@@ -381,6 +483,22 @@ for i in range(30, 0, -1):
 # mostrara un mensaje indicándonos que hemos agotado esos 3 intentos. Si
 # acertamos la clave, el programa terminará.
 # ------------------------------------------------------------------------------
+counter = 3
+
+while counter >0: 
+    pasword=input(f"Introduce tu clave de acceso y diras eureka, tienes {counter} intentos : ")
+    
+    if pasword != "eureka":
+        print("Intent fallido")
+        
+        counter -= 1
+    else:
+        print("Eureka! Has adivinado la contraseña!!!")
+        break
+    
+
+if counter == 0:
+        print("Has agotado tus intentos!")
 
 
 # ------------------------------------------------------------------------------
@@ -420,38 +538,44 @@ def show_menu():
     print
     while True:
         try:
-            menu = int(input("MENU CALCULADORA\n1.-Suma\n2.-Resta\n3.Producto\n4.-División\n5.-Salir\nSelecciona una opción: "))
+            menu = int(
+                input(
+                    "\nMENU CALCULADORA\n1.-Suma\n2.-Resta\n3.Producto\n4.-División\n5.-Salir\nSelecciona una opción: "
+                )
+            )
 
             match menu:
                 case 1:
-                    result ,char, num1, num2 = suma()
-                    show_result(result ,char, num1, num2)
+                    result, char, num1, num2 = suma()
+                    show_result(result, char, num1, num2)
                     continue
 
                 case 2:
-                    result ,char, num1, num2 = resta()
-                    show_result(result ,char, num1, num2)
-                
+                    result, char, num1, num2 = resta()
+                    show_result(result, char, num1, num2)
+
                 case 3:
-                    result ,char, num1, num2 = prod()
-                    show_result(result ,char, num1, num2)
+                    result, char, num1, num2 = prod()
+                    show_result(result, char, num1, num2)
                     continue
 
                 case 4:
-                    result ,char, num1, num2 = div()
-                    show_result(result ,char, num1, num2)
-                    continue 
+                    result, char, num1, num2 = div()
+                    show_result(result, char, num1, num2)
+                    continue
 
                 case 5:
-                    print("Saliendo del programa...")
-                    break 
+                    print("\nSaliendo del programa...")
+                    break
 
                 case _:
-                    print("El valor introducido no es válido, por favor inténtalo de nuevo")
+                    print(
+                        "\nEl valor introducido no es válido, por favor inténtalo de nuevo"
+                    )
                     continue
 
         except ValueError:
-                print("El valor introducido no es válido, por favor inténtalo de nuevo")
+            print("\nEl valor introducido no es válido, por favor inténtalo de nuevo")
 
 
 def comprobar_num():
@@ -466,30 +590,34 @@ def comprobar_num():
 
 def suma():
     num1, num2 = comprobar_num()
-    result= num1 + num2
-    char= "+"
-    return result ,char, num1, num2
+    result = num1 + num2
+    char = "+"
+    return result, char, num1, num2
+
 
 def resta():
     num1, num2 = comprobar_num()
-    result= num1 - num2
-    char= "-"
-    return result ,char, num1, num2
+    result = num1 - num2
+    char = "-"
+    return result, char, num1, num2
+
 
 def prod():
     num1, num2 = comprobar_num()
-    result= num1 + num2
-    char= "x"
-    return result ,char, num1, num2 
+    result = num1 + num2
+    char = "x"
+    return result, char, num1, num2
+
 
 def div():
     num1, num2 = comprobar_num()
-    result= num1 / num2
-    char= "÷"
-    return result ,char, num1, num2 
+    result = num1 / num2
+    char = "÷"
+    return result, char, num1, num2
 
-def show_result( result, char, num1, num2):
-    print(f"{num1} {char} {num2} = {result}")
+
+def show_result(result, char, num1, num2):
+    print(f"\n{num1} {char} {num2} = {result}\n")
 
 
 show_menu()
