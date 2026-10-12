@@ -142,6 +142,15 @@ def resume_quart(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_co
     sep()
     print(f"{team_b}:\nAnotaciones en este cuarto:{quart_counter_b}\nAnotaciones de tiro libre: {libre_b}\nAnotaciones dentro del area: {area_b}\nTriples: {triple_b}\n")
 
+# Quien gana
+def winer(team_a, team_b, counter_a, counter_b):
+    if counter_a > counter_b:
+        print(f"El gamnador es: {team_a}!!!")
+    elif counter_a < counter_b:
+        print(f"El gamnador es: {team_b}!!!")
+    else:
+         print(f"{team_a} y {team_b} han empatado!!!")
+         
 # Fesumen final del partido
 def resume_match(team_a, team_b, counter_a, counter_b):
     libre_a = 0
@@ -170,10 +179,12 @@ def resume_match(team_a, team_b, counter_a, counter_b):
     sep()
     print(f"Resumen del partido")
     marcador(team_a, team_b, counter_a, counter_b)
+    winer(team_a, team_b, counter_a, counter_b)
     sep()
     print(f"{team_a}:\nAnotaciones totales:{counter_a}\nAnotaciones de tiro libre: {libre_a}\n Anotaciones dentro del area: {area_a}\nTriples: {triple_a}\n")
     sep()
     print(f"{team_b}:\nAnotaciones totales:{counter_b}\nAnotaciones de tiro libre: {libre_b}\n Anotaciones dentro del area: {area_b}\nTriples: {triple_b}\n")
+    
 
 
 
@@ -222,8 +233,3 @@ def show_menu(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_count
 team_a, team_b = registrar_equipo()
 print ("COMIENZA EL PARTIDO!!!\n")
 show_menu(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b,)
-
-
-    
-
-
