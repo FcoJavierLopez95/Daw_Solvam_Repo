@@ -10,9 +10,7 @@ tiro_a = []
 tiro_b = []
 quart_tiro_a =[]
 quart_tiro_b = []
-tiro = ""
-point: int = 0
-select = 0
+
 
 
 # Separador
@@ -36,7 +34,7 @@ def registrar_equipo():
     sep()
     return team_a, team_b
 
-#Selecciona el equipo que anota
+#Selecciona el equipo que anota   
 def select_team(team_a, team_b):
     while True: 
         
@@ -44,11 +42,11 @@ def select_team(team_a, team_b):
         match team_menu:
 
             case "A":
-                select=team_a
+                select = team_a
                 print (f"\nhas seleccionado {team_a}\n")
                 return select
             case "B":
-                select=team_b
+                select = team_b
                 print (f"\nhas seleccionado {team_b}\n")
                 return select
             case "C":
@@ -96,7 +94,7 @@ def select_value():
 # Actualiza contadores
 def anotar_tanto(counter_a, counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b,quart_counter_a, quart_counter_b):
     select = select_team(team_a, team_b)
-    point = select_value()
+    point, tiro = select_value()
     if select == team_a:
         counter_a = int(counter_a) + point
         quart_counter_a = int(quart_counter_a) + point
@@ -140,9 +138,9 @@ def resume_quart(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_co
     print(f"Resumen del cuarto")
     marcador(team_a, team_b, counter_a, counter_b)
     sep()
-    print(f"{team_a}:\nAnotaciones en este cuarto:{quart_counter_a}\nAnotaciones de tiro libre: {libre_a}\n Anotaciones dentro del area: {area_a}\nTriples: {triple_a}\n")
+    print(f"{team_a}:\nAnotaciones en este cuarto:{quart_counter_a}\nAnotaciones de tiro libre: {libre_a}\nAnotaciones dentro del area: {area_a}\nTriples: {triple_a}\n")
     sep()
-    print(f"{team_b}:\nAnotaciones en este cuarto:{quart_counter_b}\nAnotaciones de tiro libre: {libre_b}\n Anotaciones dentro del area: {area_b}\nTriples: {triple_b}\n")
+    print(f"{team_b}:\nAnotaciones en este cuarto:{quart_counter_b}\nAnotaciones de tiro libre: {libre_b}\nAnotaciones dentro del area: {area_b}\nTriples: {triple_b}\n")
 
 # Fesumen final del partido
 def resume_match(team_a, team_b, counter_a, counter_b):
@@ -182,7 +180,7 @@ def resume_match(team_a, team_b, counter_a, counter_b):
 # Menú principal
 def show_menu(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b):
     cuarto = 1
-    while cuarto < 4:  
+    while cuarto <= 4:  
         sep()
         print(f"Cuarto numero {cuarto}.")   
         sep()  
@@ -193,32 +191,34 @@ def show_menu(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_count
             sep()
             match menu:
                 case 0:
-                    if cuarto <= 4 : 
+                    if cuarto <= 4:
                         sep()
-                        print(f"TERMINA EL  CUARTO {cuarto}º\n")
+                        print(f"TERMINA EL CUARTO {cuarto}º\n")
                         sep()
                         resume_quart(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_counter_b, quart_tiro_a, quart_tiro_b)
                         quart_counter_a = int(0)
                         quart_counter_b = int(0)
                         quart_tiro_a = []
                         quart_tiro_b = []
-                        print("")
-                        cuarto = cuarto + 1
-                        
-                    else:
-                        sep()
-                        print("TERMINA EL PARTIDO!!!")
-                        resume_match(team_a, team_b, counter_a, counter_b)
-                        sep()
+                        print("")  
+                                              
+                        if cuarto == 4:
+                            sep()
+                            print("TERMINA EL PARTIDO!!!")
+                            resume_match(team_a, team_b, counter_a, counter_b)
+                            sep()
+                    
+                    cuarto = cuarto + 1  
+                    
                 case 1:
-                    (counter_a, counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b,quart_counter_a, quart_counter_b) = anotar_tanto(counter_a, counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b,quart_counter_a, quart_counter_b, )
+                    counter_a, counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b, quart_counter_a, quart_counter_b = anotar_tanto(counter_a, counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b, quart_counter_a, quart_counter_b)
                     
                 case _:
                     print("Has introducido un numero incorrecto, intentalo de nuevo")
         except ValueError:
-            print ("ddddddHas introducido un valor incorrecto, intentalo de nuevo")
+            print ("Has introducido un valor incorrecto, intentalo de nuevo")
 
-#Programa
+# Programa
 team_a, team_b = registrar_equipo()
 print ("COMIENZA EL PARTIDO!!!\n")
 show_menu(team_a, team_b, counter_a, counter_b, quart_counter_a, quart_counter_b, tiro_a, tiro_b, quart_tiro_a, quart_tiro_b,)
