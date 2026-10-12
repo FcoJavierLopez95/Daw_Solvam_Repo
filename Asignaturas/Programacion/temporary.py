@@ -1,23 +1,22 @@
-team_a = 0
-team_b =0
-def select_team():
-    while True: 
-        team_menu = input(f"\nQue equipo ha anotado?\nA.-{team_a}\nB.-{team_b}\nSelecciona una opcion: ")
-        match team_menu:
+tiro_a =["libre", "libre", "triple", "libre", "area", "triple", "libre", "triple", "area"]
+libre_a =0
+area_a =0
+triple_a = 0
 
-            case "A":
-                select=team_a
-                print (f"has seleccionado {team_a}")
-                return select
-            case "B":
-                select=team_b
-                print (f"has seleccionado {team_b}")
-                return select
-            case "C":
-                print("Saliendo de la anotacion")
-                break
-            case _:
-                team_menu = ""
-                print("El dato introducido no es correcto, introducelo de nuevo.")
-                continue  
-select_team()
+
+for i in range (len(tiro_a)):
+    if tiro_a[i] == "libre":
+        libre_a += 1
+    elif tiro_a[i] == "area":
+            area_a += 1
+    elif tiro_a[i] == "triple":
+            triple_a += 1
+    print(i)
+    print(tiro_a[i])
+
+
+
+print("libres" \
+":",libre_a)
+print("areas:",area_a)
+print("triples:",triple_a)
