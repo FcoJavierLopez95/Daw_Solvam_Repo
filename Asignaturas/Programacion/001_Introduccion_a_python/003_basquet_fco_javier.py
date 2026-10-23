@@ -11,8 +11,6 @@ tiro_b = []
 quart_tiro_a =[]
 quart_tiro_b = []
 
-
-
 # Separador
 def sep():
     print("===============================================================")

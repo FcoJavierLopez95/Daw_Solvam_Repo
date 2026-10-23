@@ -20,8 +20,8 @@
 
 ### [1. - Introducción a lógica y algoritmos con python]
 *  [1.1 - Ejercicios Lógicos con python](./Asignaturas/Programacion/tema_1_introduccion_a_python_parte_1.py)
-*  [1.2 - Ejercicios Lógicos con python Parte 2](./Asignaturas/Programacion/002_tema_1_introduccion_a_python_parte_2.py)
-*  [1.3 - Ejercicio PARTIDO DE BALONCESTO!!](./Asignaturas/Programacion/003_basquet_fco_javier.py)
+*  [1.2 - Ejercicios Lógicos con python Parte 2](Asignaturas/Programacion/001_Introduccion_a_python/002_tema_1_introduccion_a_python_parte_2.py)
+*  [1.3 - Ejercicio PARTIDO DE BALONCESTO!!](Asignaturas/Programacion/001_Introduccion_a_python/003_basquet_fco_javier.py)
 
 ## [Lenguaje de marcas](./Asignaturas/Lenguaje_de_marcas)
 

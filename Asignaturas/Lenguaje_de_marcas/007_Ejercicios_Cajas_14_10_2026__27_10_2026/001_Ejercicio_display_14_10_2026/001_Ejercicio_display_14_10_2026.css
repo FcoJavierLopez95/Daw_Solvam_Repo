@@ -1,0 +1,41 @@
+.orange{
+    background-color: rgb(255, 254, 178);
+    padding: 8px;
+    border: solid 1px rgb(252, 183, 127) ;
+}
+
+.disblock {
+    border: green solid 1px;
+    background-color: rgb(179, 230, 183);
+    margin: 4px;
+    
+}
+
+span{
+    border:  rgb(0, 0, 0) solid 1px;
+    background-color: rgb(255, 193, 205);
+    padding: 1px;
+    padding-top: 3px;
+    color: red;
+}
+
+li a{
+    font-size: xx-large;
+    color: rgb(89, 161, 89);
+}
+table *{
+    border: solid black 1px;
+    padding: 3px;
+    margin: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+th{
+    font-weight: bold;
+}
+div{
+    display: inline-block;
+    background-color: #b9e3fc;
+    border: solid 1px blue;
+    margin: 2px;
+    padding: 10px 30px 35px 30px;
+}

@@ -538,44 +538,39 @@ def show_menu():
     print
     while True:
         try:
-            menu = int(
-                input(
-                    "\nMENU CALCULADORA\n1.-Suma\n2.-Resta\n3.Producto\n4.-División\n5.-Salir\nSelecciona una opción: "
-                )
-            )
-
-            match menu:
-                case 1:
-                    result, char, num1, num2 = suma()
-                    show_result(result, char, num1, num2)
-                    continue
-
-                case 2:
-                    result, char, num1, num2 = resta()
-                    show_result(result, char, num1, num2)
-
-                case 3:
-                    result, char, num1, num2 = prod()
-                    show_result(result, char, num1, num2)
-                    continue
-
-                case 4:
-                    result, char, num1, num2 = div()
-                    show_result(result, char, num1, num2)
-                    continue
-
-                case 5:
-                    print("\nSaliendo del programa...")
-                    break
-
-                case _:
-                    print(
-                        "\nEl valor introducido no es válido, por favor inténtalo de nuevo"
-                    )
-                    continue
+            menu = int(input("\nMENU CALCULADORA\n1.-Suma\n2.-Resta\n3.Producto\n4.-División\n5.-Salir\nSelecciona una opción: "))
 
         except ValueError:
             print("\nEl valor introducido no es válido, por favor inténtalo de nuevo")
+
+        match menu:
+            case 1:
+                result, char, num1, num2 = suma()
+                show_result(result, char, num1, num2)
+                continue
+
+            case 2:
+                result, char, num1, num2 = resta()
+                show_result(result, char, num1, num2)
+
+            case 3:
+                result, char, num1, num2 = prod()
+                show_result(result, char, num1, num2)
+                continue
+
+            case 4:
+                result, char, num1, num2 = div()
+                show_result(result, char, num1, num2)
+                continue
+
+            case 5:
+                print("\nSaliendo del programa...")
+                break
+
+            case _:
+                print("\nEl valor introducido no es válido, por favor inténtalo de nuevo")
+                continue
+
 
 
 def comprobar_num():

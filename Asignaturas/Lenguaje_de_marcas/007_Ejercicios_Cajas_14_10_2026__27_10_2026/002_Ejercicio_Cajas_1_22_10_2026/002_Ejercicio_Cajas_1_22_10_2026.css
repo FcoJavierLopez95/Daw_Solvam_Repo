@@ -1,0 +1,127 @@
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+    background-color: rgb(220, 232, 245);
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    font-weight: none;
+    font-size: x-large;
+}
+h2{
+    font-weight: none;
+    font-size: x-large;
+    color: rgb(2, 59, 2);
+}
+header{
+    display: block;
+    background-color: rgb(237, 241, 245);
+    padding: 5px;
+    margin: 15px 15px 0 15px;
+    width: max-content;
+}
+footer{
+    position: sticky;
+    bottom:0;
+    left: 15px;
+    display: inline-block;
+    background-color: rgb(237, 241, 245);
+    padding: 5px;
+}
+nav li{
+    display: inline-block;
+    background-color: rgb(193, 203, 212);
+    border: 1px solid rgb(213, 222, 233);
+    padding: 8px 5px;
+    margin: 5px;
+}
+table {
+    display: inline-block;
+    background-color: rgba(209, 218, 235, 0.37);  
+    border: 1px solid rgb(116, 158, 206);
+    margin: 2px;
+    padding: 2px;
+}
+table *{
+    margin: 5px;
+    padding: 7px 10px;
+}
+table th{
+    font-weight: bold;
+    background-color: rgba(77, 114, 179, 0.37);  
+    border: 1px solid rgb(116, 158, 206);
+}
+table tr, td{
+    background-color: rgba(226, 235, 252, 0.37);  
+    border: 1px solid rgb(116, 158, 206);
+}
+#position{
+    background-color: rgba(27, 92, 190, 0.24);  
+    border: 1px solid rgb(145, 158, 173);
+    margin: 0 15px 15px 15px;
+    padding: 5px 10px;
+}
+#position li{
+    display: inline-block;
+    background-color: rgba(236, 240, 247, 0.973);  
+    border: 1px solid rgb(177, 188, 201);
+    margin: 5px;
+    padding: 5px 10px;
+}
+.card{
+    position: relative;
+    margin: 0 15px 15px 25px;
+    padding: 15px 20px;
+}
+.green{
+    background-color: rgba(89, 218, 147, 0.26);  
+    border: 1px solid rgb(19, 214, 123);
+    padding: 25px 15px;
+}
+.grey{
+    background-color: rgba(236, 240, 247, 0.973);  
+    border: 1px solid rgb(145, 158, 173);
+}
+.yellow{
+    background-color: rgba(255, 230, 0, 0.137);  
+    border: 1px solid rgb(109, 76, 15);
+}
+.box-green, .box-yellow, #float-right , #float-left{
+    margin: 5px;
+    padding: 5px 10px;
+}
+.box-green, .box-yellow{
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+}
+.box-green{
+    background-color: rgba(68, 150, 81, 0.973);  
+    border: 1px solid rgb(4, 63, 34);
+    color: white;
+}
+.box-yellow{
+    background-color: rgba(216, 206, 113, 0.562);  
+    border: 1px solid rgb(109, 76, 15);
+    color: rgb(51, 35, 5);
+    
+}
+#float-left {
+    float: left;
+    background-color: rgba(236, 240, 247, 0.973);  
+    border: 1px solid rgb(109, 76, 15);
+    margin-top: -5px; /* Sube el botón compensando el padding */
+}
+#float-right {
+    float: right;
+    background-color: rgba(236, 240, 247, 0.973);  
+    border: 1px solid rgb(109, 76, 15);
+    margin-top: -5px;
+}
