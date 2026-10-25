@@ -116,7 +116,7 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
 
 
         // ------------------------------------------------------------------------------
-        // todo EJERCICIO 7
+        // EJERCICIO 7
         // Realiza un conversor de dólares a euros. La cantidad en dólares que se
         // quiere convertir deberá estar almacenada en una variable.
         // ------------------------------------------------------------------------------
@@ -149,6 +149,32 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // en una variable.
         // ------------------------------------------------------------------------------
 
+        // Declaración de variables
+        final float IVA = 1.21f;
+        float bImp = 0f;
+        float price = -1f;
+
+        // Pregunto Base imp.
+
+        do {
+            System.out.println("Introduce el precio del artículo");
+            bImp = 0f;
+
+            try {
+                bImp = sc.nextFloat();
+            } catch (Exception e) {
+                System.out.println("Has introducido un valor no válido. Por favor inténtalo de nuevo:");
+            }
+            sc.nextLine();
+
+            if (bImp <=0) {
+                System.out.println("El número no puede ser 0 ni negativo");
+            }
+        }while(bImp <=0);
+
+        // Conclusión:
+        price = bImp * IVA;
+        System.out.printf("Base Imponible: %f %nIVA: 21%%&n precio final: %f%n", bImp,  price);
 
 
 
