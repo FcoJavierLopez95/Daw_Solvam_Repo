@@ -62,7 +62,7 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
 
         // ------------------------------------------------------------------------------
         //  EJERCICIO 4
-        // Crea las variables nombre, direccion y telefono y asígnale los valores
+        // Crea las variables nombre, dirección y teléfono y asígnale los valores
         // correspondientes. Muestra los valores de esas variables por pantalla de
         // tal forma que el resultado del programa sea el mismo que en el ejercicio 2.
         // ------------------------------------------------------------------------------
@@ -70,19 +70,49 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // fixme No entiendo, Ya está hecho...
 
         // ------------------------------------------------------------------------------
-        // todo EJERCICIO 5
+        // EJERCICIO 5
         // Escribe un programa en el que se declaren las variables enteras x e y.
         // Asígnales los valores 144 y 999 respectivamente. A continuación, muestra
         // por pantalla el valor de cada variable, la suma, la resta, la división
         // y la multiplicación.
         // ------------------------------------------------------------------------------
 
+        float x = 144;
+        float y = 999;
+
+        System.out.println("El resultado de la Suma de x + y = "+ (x + y) );
+        System.out.println("El resultado de la Resta de x - y = "+ (x - y) );
+        System.out.println("El resultado de la División de x ÷ y = " +  (x / y) );
+        System.out.println("El resultado de la Suma de x x y = "+ (x + y) );
 
         // ------------------------------------------------------------------------------
-        // todo EJERCICIO 6
+        // EJERCICIO 6
         // Realiza un conversor de euros a dólares. La cantidad en euros que se
         // quiere convertir deberá estar almacenada en una variable.
         // ------------------------------------------------------------------------------
+
+        float eurValue = 1.12f;
+        float eur = 0;
+        float dollar;
+
+        do{
+            System.out.println("Introduce cuántos € quieres cambiar a $");
+
+            try {
+                eur = sc.nextFloat();
+                if (eur <= 0){
+                    System.out.println("El valor no puede ser 0 ni negativo");
+                }
+            } catch (Exception e) {
+                System.out.println("El valor introducido no es un número, inténtalo de nuevo.");
+                eur = 0;
+            }sc.nextLine();
+        }while (eur <= 0 );
+
+        dollar = eur * eurValue;
+
+        System.out.printf("%f€ -> %f$%n", eur, dollar);
+
 
 
         // ------------------------------------------------------------------------------
@@ -91,6 +121,26 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // quiere convertir deberá estar almacenada en una variable.
         // ------------------------------------------------------------------------------
 
+        float dollarValue = 0.89f;
+
+        do{
+            System.out.println("Introduce cuántos $ quieres cambiar a €");
+
+            try {
+                dollar = sc.nextFloat();
+                if (dollar <= 0){
+                    System.out.println("El valor no puede ser 0 ni negativo");
+                }
+            } catch (Exception e) {
+                System.out.println("El valor introducido no es un número, inténtalo de nuevo.");
+                dollar = 0;
+            }sc.nextLine();
+        }while (dollar <= 0 );
+
+        eur = dollar * dollarValue;
+
+        System.out.printf("%f€ -> %f$%n", dollar, eur);
+
 
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 8
@@ -98,6 +148,8 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // base imponible (precio sin IVA). La base imponible estará almacenada
         // en una variable.
         // ------------------------------------------------------------------------------
+
+
 
 
         // ------------------------------------------------------------------------------
