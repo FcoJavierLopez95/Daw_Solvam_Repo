@@ -1,7 +1,7 @@
 package _0001_Ejercicios_Java_21_10_2026;
 import java.util.Scanner;
 
-public class _0001_Ejercicios_Java_21_10_2026 {
+public class _002_Ejercicios_Java_2_21_10_2026 {
     public static void main(String[] args) {
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 1
@@ -366,8 +366,55 @@ public class _0001_Ejercicios_Java_21_10_2026 {
         System.out.println("Ejercicio 7");
         System.out.println();
 
+        int i =4;
+        int password;
+        int tryPassword =0;
+        int length;
 
+        do {
+            System.out.printf("Introduce una contraseña para cerrar la caja.%n" +
+                    "la contraseña debe constar de un número de 4 cifras%n");
 
+            try {
+                password = sc.nextInt();
+                length = Integer.toString(password).length();
+
+                if (length < 4) {
+                    System.out.printf("La contraseña no tiene 4 cifras,%n por favor inténtalo de nuevo %n%n");
+                } else {
+                    System.out.println("Contraseña creada satisfactoriamente.\n");
+                }
+            } catch (Exception e) {
+                System.out.printf("Has introducido un dato incorrecto, %npor favor inténtalo de nuevo %n%n");
+                password = 0;
+                length = 0;
+            }sc.nextLine();
+        }while (length != 4);
+
+        do {
+            System.out.printf("Introduce la contraseña para abrir la caja");
+            try{
+                tryPassword = sc.nextInt();
+
+                if (password == tryPassword) {
+                    System.out.println("Abriendo caja...");
+                    i = 4;
+                }
+                else{
+                    i--;
+                    System.out.printf("Contraseña incorrecta%n%d intentos para auto destrucción...%n%n", i);
+                    sc.nextLine();
+                }
+
+            } catch (Exception e) {
+                i--;
+                System.out.printf("Contraseña incorrecta%n%d intentos para auto destrucción...%n%n", i);
+                sc.nextLine();
+            }
+        }while(i >= 1 && tryPassword != password);
+        if (i == 0){
+            System.out.println("BOOM!");
+        }
 
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 8
@@ -375,12 +422,52 @@ public class _0001_Ejercicios_Java_21_10_2026 {
         // por teclado.
         // ------------------------------------------------------------------------------
 
+        System.out.printf("%n%n");
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("Ejercicio 8");
+        System.out.println();
+
+        System.out.printf("%n%n");
+        System.out.println("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+        System.out.println("Ejercicio 8");
+        System.out.println();
+
+        int numLen;
+        length =0;
+
+        do {
+            System.out.println("Introduce un número y te diré su longitud: ");
+
+            try {
+                numLen = sc.nextInt();
+                length = Integer.toString(numLen).length();
+                if(numLen > 0) {
+                    System.out.printf("El numero %d tinene %d dígitos de longitud.", numLen, length);
+                }else{
+                    System.out.printf("El dato que has introducido nu es un número, %npor favor inténtalo de nuevo %n%n");
+                    numLen = 0;
+                    length = 0;
+                }
+
+            } catch (Exception e) {
+                System.out.printf("El dato que has introducido nu es un número, %npor favor inténtalo de nuevo %n%n");
+                numLen = 0;
+                length = 0;
+            }sc.nextLine();
+        }while (length == 0);
+
+
+
+
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 9
         // Realiza un programa que sume los 100 números siguientes a un número entero
         // y positivo introducido por teclado. Se debe comprobar que el dato introducido
         // es correcto (que es un número positivo).
         // ------------------------------------------------------------------------------
+
+
+
 
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 10
