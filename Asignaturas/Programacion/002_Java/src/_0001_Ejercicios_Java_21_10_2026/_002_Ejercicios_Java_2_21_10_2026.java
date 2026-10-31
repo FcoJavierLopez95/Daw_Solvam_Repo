@@ -466,6 +466,34 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
         // es correcto (que es un número positivo).
         // ------------------------------------------------------------------------------
 
+        int sumCien=0;
+        int sumAux;
+        int result;
+
+
+        do{
+            System.out.println("Introduce un número entero");
+
+            try {
+                sumCien = sc.nextInt();
+                if (sumCien <=0) {
+                    System.out.println("El número introducido no puede ser 0  o negativo. Por favor inténtatlo de nuevo");
+                }
+
+            }catch (Exception e){
+                System.out.println("El dato introducido no es un número entero");
+            } sc.nextLine();
+        }while( sumCien <=0 );
+
+        sumAux = sumCien;
+
+        for (int j = 0; j <= 100 ; j++) {
+            result  = sumCien + sumAux;
+            System.out.printf("%d + %d = %d%n", sumCien, sumAux, result);
+            sumCien= result;
+            sumAux ++;
+        }
+        
 
 
 
