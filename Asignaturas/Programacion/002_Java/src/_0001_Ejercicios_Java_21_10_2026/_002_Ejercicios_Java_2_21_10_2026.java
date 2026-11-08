@@ -55,7 +55,7 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
         // Conclusión
         System.out.printf("Que te toca a primera hora el %s %n", day);
         String clas = sc.nextLine();
-        System.out.printf("El %s tienes %s a primera hora.%n",day, clas);
+        System.out.printf("El %s tienes %s a primera hora.%n", day, clas);
 
 
         // ------------------------------------------------------------------------------
@@ -84,13 +84,13 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
                 }else if(hora >= 13 && hora <= 20){
                     saludo = "Buenas tardes";
                 }else  if((hora >= 21 && hora <= 23) || (hora >= 0 && hora <= 5)){
-                   saludo = "Buenas noches";
+                    saludo = "Buenas noches";
                 }else{
                     System.out.println("El número tiene que estar entre 0 y 23");
                 }
             } catch (Exception e) {
                 System.out.println("El valor que has introducido no es un número, inténtalo de nuevo.");
-                }
+            }
             sc.nextLine();
 
         }while (hora < 0 || hora > 23);
@@ -104,7 +104,7 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
         // Si la media de los dos controles da un número mayor o igual a 5, el alumno
         // está aprobado y se mostrará la media. En caso de que la media sea un número
         // menor que 5, el alumno habrá tenido que hacer el examen de recuperación que
-        // se califica como apto o no apto, por tanto se debe preguntar al usuario
+        // se califica como apto o no apto, por lo tanto se debe preguntar al usuario
         // ¿Cuál ha sido el resultado de la recuperación? (apto/no apto). Si el resultado
         // de la recuperación es apto, la nota será un 5; en caso contrario, se mantiene
         // la nota media anterior.
@@ -128,7 +128,7 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
                 examenes = sc.nextInt();
             } catch (Exception e) {
                 System.out.println("Has introducido un valor no válido. Por favor inténtalo de nuevo:");
-                }
+            }
             sc.nextLine();
 
             if (examenes <0) {
@@ -145,49 +145,49 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
                     nota = sc.nextFloat();
 
                     if (nota <= 0 || nota > 10) {
-                    System.out.println("La nota no puede ser negativa ni mayor a 10");
+                        System.out.println("La nota no puede ser negativa ni mayor a 10");
                     }
 
                 } catch (Exception e) {
                     System.out.println("El valor introducido no es un numero, inténtalo de nuevo");
                     nota = -1f;
                     sc.nextLine();
-                    }
+                }
             } while (nota <= 0 || nota > 10);
             notatotal = notatotal + nota;
         }
 
-            // Calculo la media y si tiene que recuperar
+        // Calculo la media y si tiene que recuperar
         float media = notatotal / examenes;
         System.out.printf("Tu nota final es un %f", media);
 
-            if (media >= 5) {
-                System.out.printf("La media de Programación es de %f%n", media);
-            } else {
-                System.out.println("Tienes que hacer recuperación");
-                do {
-                    System.out.printf("Que has sacado?%n1.-Apto%n2.-No apto%n");
-                    System.out.printf("Que has sacado?%n1.-Apto%n2.-No apto%n");
-                    try {
-                        recuperacion = sc.nextInt();
-                        if(recuperacion == 1){
-                            media = 5f;
-                        }
-                        else if (recuperacion== 2) {
-                            System.out.println("Que pena no has aprobado");
-                        }
-                        else{
-                            System.out.println("Solo puedes introducir 1  y 2");
-                        }
-                    } catch(Exception e){
-                        System.out.println("Has introducido un valor no válido. Por favor inténtalo de nuevo:");
-                        recuperacion = 0;
-                        }
-                    sc.nextLine();
+        if (media >= 5) {
+            System.out.printf("La media de Programación es de %f%n", media);
+        } else {
+            System.out.println("Tienes que hacer recuperación");
+            do {
+                System.out.printf("Que has sacado?%n1.-Apto%n2.-No apto%n");
+                System.out.printf("Que has sacado?%n1.-Apto%n2.-No apto%n");
+                try {
+                    recuperacion = sc.nextInt();
+                    if(recuperacion == 1){
+                        media = 5f;
+                    }
+                    else if (recuperacion== 2) {
+                        System.out.println("Que pena no has aprobado");
+                    }
+                    else{
+                        System.out.println("Solo puedes introducir 1  y 2");
+                    }
+                } catch(Exception e){
+                    System.out.println("Has introducido un valor no válido. Por favor inténtalo de nuevo:");
+                    recuperacion = 0;
+                }
+                sc.nextLine();
 
-                }while (recuperacion != 1 && recuperacion !=2);
+            }while (recuperacion != 1 && recuperacion !=2);
 
-            }
+        }
         System.out.printf("Tu nota final en Programación es %f", media);
 
 
@@ -457,8 +457,6 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
         }while (length == 0);
 
 
-
-
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 9
         // Realiza un programa que sume los 100 números siguientes a un número entero
@@ -507,10 +505,18 @@ public class _002_Ejercicios_Java_2_21_10_2026 {
         // 1 2 3 4 3 2 1
         // ------------------------------------------------------------------------------
 
+
+
+
+
+
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 11
         // Realiza un programa que pida un número por teclado y que luego muestre
         // ese número al revés.
         // ------------------------------------------------------------------------------
+
+
+
     }
 }

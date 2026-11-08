@@ -77,12 +77,12 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // y la multiplicación.
         // ------------------------------------------------------------------------------
 
-        float x = 144;
-        float y = 999;
+        int x = 144;
+        int y = 999;
 
         System.out.println("El resultado de la Suma de x + y = "+ (x + y) );
         System.out.println("El resultado de la Resta de x - y = "+ (x - y) );
-        System.out.println("El resultado de la División de x ÷ y = " +  (x / y) );
+        System.out.println("El resultado de la División de x ÷ y = " +  ((float)x / y) );
         System.out.println("El resultado de la Suma de x x y = "+ (x + y) );
 
         // ------------------------------------------------------------------------------
@@ -186,6 +186,18 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // • Si es negativo, se mostrará cambiado de signo.
         // ------------------------------------------------------------------------------
 
+        // Operador ternario
+        // variable = (condición) ?  acción si es true:  acción si es false;
+
+        int numberPos;
+        numberPos = sc.nextInt();
+        numberPos= (numberPos <=0)   ?  ( numberPos*(-1))   :  numberPos;
+        System.out.println(numberPos);
+
+
+
+
+
 
         // ------------------------------------------------------------------------------
         // todo EJERCICIO 10
@@ -203,6 +215,16 @@ public class _001_Ejercicios_Java_1_21_10_2026 {
         // Falso → En caso contrario.
         // Utilizar el operador ternario obligatoriamente.
         // ------------------------------------------------------------------------------
+
+/*
+        int edad = 15;
+        int nvEstudios = 5;
+        int ingresos = 23000;
+        resultado = (edad <=)
+*/
+
+
+
 
 
         // ------------------------------------------------------------------------------
