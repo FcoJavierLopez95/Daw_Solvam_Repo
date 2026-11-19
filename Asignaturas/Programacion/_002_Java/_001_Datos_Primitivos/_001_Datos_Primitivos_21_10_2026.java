@@ -1,6 +1,6 @@
-package _001_Datos_Ptimitivos_21_10_2026;
+package Asignaturas.Programacion._002_Java._001_Datos_Primitivos;
 
-public class _001_Datos_Ptimitivos_21_10_2026 {
+public class _001_Datos_Primitivos_21_10_2026 {
     public static void main(String[] args) {
         // Esto es un comentario en una línea
 

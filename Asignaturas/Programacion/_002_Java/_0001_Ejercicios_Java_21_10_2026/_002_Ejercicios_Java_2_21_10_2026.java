@@ -1,4 +1,4 @@
-package _0001_Ejercicios_Java_21_10_2026;
+package Asignaturas.Programacion._002_Java._0001_Ejercicios_Java_21_10_2026;
 import java.util.Scanner;
 
 public class _002_Ejercicios_Java_2_21_10_2026 {
