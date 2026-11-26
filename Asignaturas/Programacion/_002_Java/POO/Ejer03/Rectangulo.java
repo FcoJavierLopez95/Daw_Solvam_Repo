@@ -1,4 +1,4 @@
-package Asignaturas.Programacion._002_Java.POO.Ejer04;
+package Asignaturas.Programacion._002_Java.POO.Ejer03;
 
 public class Rectangulo {
 
@@ -16,7 +16,7 @@ public class Rectangulo {
         this.y2=y2;
     }
 
-    //  Getters y Setters
+//  Getters y Setters
 
 
     public int getX1() {
